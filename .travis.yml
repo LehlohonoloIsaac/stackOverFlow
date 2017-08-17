@@ -1,5 +1,7 @@
 language: objective-c
-osx_image: xcode8.3.3
+osx_image: xcode8.3
 xcode_project: stackOverFlow.xcodeproj
 xcode_scheme: stackOverFlow
 xcode_sdk: iphonesimulator7.0
+script:
+    - xcodebuild clean build -sdk iphonesimulator -workspace stackOverFlow.xcworkspace -scheme stackOverFlow CODE_SIGNING_REQUIRED=NO
