@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED9A792A1F45CB0600ACB76C /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9A79291F45CB0600ACB76C /* QuestionCell.xib */; };
 		EDC8FCA91F458BDA00266A50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCA81F458BDA00266A50 /* main.m */; };
 		EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCAB1F458BDA00266A50 /* AppDelegate.m */; };
 		EDC8FCAF1F458BDA00266A50 /* StackOverFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCAE1F458BDA00266A50 /* StackOverFlowController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED9A79291F45CB0600ACB76C /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		EDC8FCA41F458BD900266A50 /* stackOverFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stackOverFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC8FCA81F458BDA00266A50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDC8FCAA1F458BDA00266A50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				EDC8FCB51F458BDA00266A50 /* LaunchScreen.storyboard */,
 				EDC8FCB81F458BDA00266A50 /* Info.plist */,
 				EDC8FCA71F458BD900266A50 /* Supporting Files */,
+				ED9A79291F45CB0600ACB76C /* QuestionCell.xib */,
 			);
 			path = stackOverFlow;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC8FCB71F458BDA00266A50 /* LaunchScreen.storyboard in Resources */,
+				ED9A792A1F45CB0600ACB76C /* QuestionCell.xib in Resources */,
 				EDC8FCB41F458BDA00266A50 /* Assets.xcassets in Resources */,
 				EDC8FCB21F458BDA00266A50 /* Main.storyboard in Resources */,
 			);
@@ -414,6 +418,7 @@
 				EDC8FCC81F458BDA00266A50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDC8FCC91F458BDA00266A50 /* Build configuration list for PBXNativeTarget "stackOverFlowTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +427,7 @@
 				EDC8FCCB1F458BDA00266A50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
