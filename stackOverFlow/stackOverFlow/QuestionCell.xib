@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="121" id="4iv-eL-Mus">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="121" id="4iv-eL-Mus" customClass="QuestionCell">
             <rect key="frame" x="0.0" y="0.0" width="442" height="121"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4iv-eL-Mus" id="ut2-2P-E24">
@@ -116,6 +116,12 @@
                     <constraint firstItem="tWZ-Hd-lXM" firstAttribute="leading" secondItem="4Vm-hu-7nP" secondAttribute="trailing" id="zQz-k6-HRb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="numberOfAnswers" destination="DE2-qo-UPl" id="eCZ-3t-wBy"/>
+                <outlet property="numberOfHoursAgo" destination="qpR-65-yq6" id="2rQ-T1-Izw"/>
+                <outlet property="question" destination="udL-WY-J42" id="Lj9-OH-IfQ"/>
+                <outlet property="tags" destination="S8m-1o-Scg" id="gWs-OA-KdM"/>
+            </connections>
             <point key="canvasLocation" x="-178" y="-15.5"/>
         </tableViewCell>
     </objects>
