@@ -10,15 +10,20 @@
 
 @implementation QuestionCell
 
+
+@synthesize numberOfAnswers = _numberOfAnswers;
+@synthesize question = _question;
+@synthesize numberOfHoursAgo = _numberOfHoursAgo;
+@synthesize tags = _tags;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

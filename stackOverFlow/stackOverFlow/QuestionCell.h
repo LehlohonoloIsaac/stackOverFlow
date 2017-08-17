@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestionCell : UITableViewCell
-
+    @property (nonatomic, weak) IBOutlet UILabel *numberOfAnswers;
+    @property (nonatomic, weak) IBOutlet UILabel *question;
+    @property (nonatomic, weak) IBOutlet UILabel *numberOfHoursAgo;
+    @property (nonatomic, weak) IBOutlet UILabel *tags;
 @end
