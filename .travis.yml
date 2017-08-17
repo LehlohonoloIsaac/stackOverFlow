@@ -3,4 +3,3 @@ osx_image: xcode8.3.3
 xcode_project: stackOverFlow.xcodeproj
 xcode_scheme: stackOverFlow
 xcode_sdk: iphonesimulator7.0
-script: xcodebuild -workspace stackOverFlow.xcworkspace -scheme stackOverFlow -sdk iphonesimulator7.0 -configuration Debug build test
