@@ -1,9 +1,7 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
- - rbx-2
-env:
-  - DB=postgres
-  - SH=bash
-  - PACKAGE_VERSION="1.0.*"
+language: objective-c
+osx_image: xcode8.3
+xcode_project: stackOverFlow.xcodeproj
+xcode_scheme: stackOverFlow
+xcode_sdk: iphonesimulator7.0
+script:
+    - xcodebuild clean build -sdk iphonesimulator -scheme stackOverFlow CODE_SIGNING_REQUIRED=NO
