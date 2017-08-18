@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED4534B81F470624008E5C14 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534B71F470624008E5C14 /* Question.m */; };
 		ED8E0D1D1F45D6A1006BA37C /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */; };
 		ED9A792A1F45CB0600ACB76C /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9A79291F45CB0600ACB76C /* QuestionCell.xib */; };
 		EDC8FCA91F458BDA00266A50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCA81F458BDA00266A50 /* main.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED4534B61F470624008E5C14 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		ED4534B71F470624008E5C14 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		ED9A79291F45CB0600ACB76C /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 				ED9A79291F45CB0600ACB76C /* QuestionCell.xib */,
 				ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */,
 				ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */,
+				ED4534B61F470624008E5C14 /* Question.h */,
+				ED4534B71F470624008E5C14 /* Question.m */,
 			);
 			path = stackOverFlow;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			files = (
 				EDC8FCAF1F458BDA00266A50 /* StackOverFlowController.m in Sources */,
 				ED8E0D1D1F45D6A1006BA37C /* QuestionCell.m in Sources */,
+				ED4534B81F470624008E5C14 /* Question.m in Sources */,
 				EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */,
 				EDC8FCA91F458BDA00266A50 /* main.m in Sources */,
 			);
