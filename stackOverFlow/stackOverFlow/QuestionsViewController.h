@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  QuestionsViewController.h
 //  stackOverFlow
 //
 //  Created by DVT on 2017/08/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StackOverFlowController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+@interface QuestionsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 
 @end

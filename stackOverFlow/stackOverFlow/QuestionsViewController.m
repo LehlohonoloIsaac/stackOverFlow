@@ -6,14 +6,14 @@
 //  Copyright © 2017 DVT. All rights reserved.
 //
 
-#import "StackOverFlowController.h"
+#import "QuestionsViewController.h"
 #import "QuestionCell.h"
 
-@interface StackOverFlowController ()
+@interface QuestionsViewController ()
 
 @end
 
-@implementation StackOverFlowController
+@implementation QuestionsViewController
 {
     NSArray *data;
 }
