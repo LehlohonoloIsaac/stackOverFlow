@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EDC8FCA91F458BDA00266A50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCA81F458BDA00266A50 /* main.m */; };
 		EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCAB1F458BDA00266A50 /* AppDelegate.m */; };
-		EDC8FCAF1F458BDA00266A50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCAE1F458BDA00266A50 /* ViewController.m */; };
+		EDC8FCAF1F458BDA00266A50 /* StackOverFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCAE1F458BDA00266A50 /* StackOverFlowController.m */; };
 		EDC8FCB21F458BDA00266A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC8FCB01F458BDA00266A50 /* Main.storyboard */; };
 		EDC8FCB41F458BDA00266A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC8FCB31F458BDA00266A50 /* Assets.xcassets */; };
 		EDC8FCB71F458BDA00266A50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC8FCB51F458BDA00266A50 /* LaunchScreen.storyboard */; };
@@ -31,8 +31,8 @@
 		EDC8FCA81F458BDA00266A50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDC8FCAA1F458BDA00266A50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EDC8FCAB1F458BDA00266A50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EDC8FCAD1F458BDA00266A50 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EDC8FCAE1F458BDA00266A50 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EDC8FCAD1F458BDA00266A50 /* StackOverFlowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackOverFlowController.h; sourceTree = "<group>"; };
+		EDC8FCAE1F458BDA00266A50 /* StackOverFlowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackOverFlowController.m; sourceTree = "<group>"; };
 		EDC8FCB11F458BDA00266A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDC8FCB31F458BDA00266A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC8FCB61F458BDA00266A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,8 +83,8 @@
 			children = (
 				EDC8FCAA1F458BDA00266A50 /* AppDelegate.h */,
 				EDC8FCAB1F458BDA00266A50 /* AppDelegate.m */,
-				EDC8FCAD1F458BDA00266A50 /* ViewController.h */,
-				EDC8FCAE1F458BDA00266A50 /* ViewController.m */,
+				EDC8FCAD1F458BDA00266A50 /* StackOverFlowController.h */,
+				EDC8FCAE1F458BDA00266A50 /* StackOverFlowController.m */,
 				EDC8FCB01F458BDA00266A50 /* Main.storyboard */,
 				EDC8FCB31F458BDA00266A50 /* Assets.xcassets */,
 				EDC8FCB51F458BDA00266A50 /* LaunchScreen.storyboard */,
@@ -213,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDC8FCAF1F458BDA00266A50 /* ViewController.m in Sources */,
+				EDC8FCAF1F458BDA00266A50 /* StackOverFlowController.m in Sources */,
 				EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */,
 				EDC8FCA91F458BDA00266A50 /* main.m in Sources */,
 			);
