@@ -7,6 +7,7 @@
 //
 
 #import "StackOverFlowController.h"
+#import "QuestionCell.h"
 
 @interface StackOverFlowController ()
 
@@ -29,13 +30,23 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *tableIdentifier = @"TableItem";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    static NSString *tableIdentifier = @"QuestionCell";
+    QuestionCell *cell = (QuestionCell *)[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"QuestionCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
-    cell.textLabel.text = [data objectAtIndex:indexPath.row];
+    
+    cell.question.text = [data objectAtIndex:indexPath.row];
+    
+    //cell.textLabel.text = [data objectAtIndex:indexPath.row];
     return cell;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 
 @end
