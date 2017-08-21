@@ -54,9 +54,9 @@
 }
 
 -(void)testIfCorrectNumberOfAnswersAreReturned{
-    NSString *expectedResult = @"4";
-    NSString *numberofAnswers = [self.questionsViewModelToTest numberOfAnswersAtIndexPath:_indexPath];
-    XCTAssertTrue([numberofAnswers isEqualToString:expectedResult]);
+    NSUInteger expectedResult = 4;
+    NSUInteger numberofAnswers = [self.questionsViewModelToTest numberOfAnswersAtIndexPath:_indexPath];
+    XCTAssertEqual(expectedResult, numberofAnswers);
 }
 
 

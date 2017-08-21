@@ -51,9 +51,9 @@
     return [NSString stringWithFormat:@"%@", question.timeAgo];
 }
 
--(NSString *)numberOfAnswersAtIndexPath:(NSIndexPath *)indexPath{
+-(NSUInteger)numberOfAnswersAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return [NSString stringWithFormat:@"%@", question.numberOfAnswers];
+    return question.numberOfAnswers;
 }
 
 -(NSString *)displayQuestionAtIndexPath:(NSIndexPath *)indexPath{
