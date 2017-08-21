@@ -33,7 +33,7 @@
     return self;
 }
 
--(NSUInteger)numberOfQuestionsInSection:(NSInteger)section{
+-(NSUInteger)numberOfQuestions{
     return self.questions.count;
 }
 

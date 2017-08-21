@@ -14,7 +14,7 @@
 
 -(instancetype)initWithQuestions:(QuestionsData *)questionsData;
 
--(NSUInteger)numberOfQuestionsInSection:(NSInteger)section;
+-(NSUInteger)numberOfQuestions;
 -(Question *)questionAtIndexPath:(NSIndexPath *)indexPath;
 -(NSString *)tagsAtIndexPath:(NSIndexPath *)indexPath;
 -(NSString *)timeAtIndexPath:(NSIndexPath *)indexPath;

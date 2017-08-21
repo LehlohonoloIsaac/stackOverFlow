@@ -25,7 +25,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.questionsViewModel numberOfQuestionsInSection:section];
+    return [self.questionsViewModel numberOfQuestions];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

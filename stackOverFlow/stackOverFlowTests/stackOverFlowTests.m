@@ -29,24 +29,34 @@
 }
 
 -(void)testIfTheCorrectQuestionIsDisplayed{
+    NSString *expectedResult = @"What is objective-C";
     NSString *question = [self.questionsViewModelToTest displayQuestionAtIndexPath:_indexPath];
-    XCTAssertTrue(false);
+    XCTAssertTrue([question isEqualToString:expectedResult]);
 }
 
 -(void)testIfTheCorrectNumberOfQuestionsIsReturned{
-   XCTAssertTrue(false);
+    NSUInteger expectedResult = 3;
+    NSUInteger numberOfQuestions = [self.questionsViewModelToTest numberOfQuestions];
+    XCTAssertEqual(expectedResult, numberOfQuestions);
 }
 
 -(void)testIfTheCorrectTimeIsReturned{
-    XCTAssertTrue(false);
+    NSString *expectedResult = @"3 years";
+    NSString *timePosted = [self.questionsViewModelToTest timeAtIndexPath:_indexPath];
+    XCTAssertTrue([timePosted isEqualToString:expectedResult]);
 }
 
 -(void)testIfTheCorrectTagsAreReturned{
-   XCTAssertTrue(false);
+    NSString *expectedResult = @"ios objective-C";
+    NSString *tags = [self.questionsViewModelToTest tagsAtIndexPath:_indexPath];
+    XCTAssertTrue([tags isEqualToString:expectedResult]);
+  
 }
 
 -(void)testIfCorrectNumberOfAnswersAreReturned{
-   XCTAssertTrue(false);
+    NSString *expectedResult = @"4";
+    NSString *numberofAnswers = [self.questionsViewModelToTest numberOfAnswersAtIndexPath:_indexPath];
+    XCTAssertTrue([numberofAnswers isEqualToString:expectedResult]);
 }
 
 
