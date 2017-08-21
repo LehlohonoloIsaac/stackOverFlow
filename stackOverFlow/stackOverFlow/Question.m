@@ -18,10 +18,10 @@
         return nil;
     }
     
-    _question = [question copy];
-    _numberOfAnswers = [numberOfAnswers copy];
-    _tags = [tags copy];
-    _timeAgo = [timeAgo copy];
+    _question = question;
+    _numberOfAnswers = numberOfAnswers;
+    _tags = tags;
+    _timeAgo = timeAgo;
     
     return self;
 }

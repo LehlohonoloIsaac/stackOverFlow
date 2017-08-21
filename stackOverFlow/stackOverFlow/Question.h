@@ -10,10 +10,10 @@
 
 @interface Question : NSObject
 
-@property (nonatomic,copy,readonly) NSString *question;
-@property (nonatomic,copy,readonly) NSString *numberOfAnswers;
-@property (nonatomic,copy,readonly) NSString *tags;
-@property (nonatomic,copy,readonly) NSString *timeAgo;
+@property (nonatomic,retain) NSString *question;
+@property (nonatomic,retain) NSString *numberOfAnswers;
+@property (nonatomic,retain) NSString *tags;
+@property (nonatomic,retain) NSString *timeAgo;
 
 -(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSString *)numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo;
 

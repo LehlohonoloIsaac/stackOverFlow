@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		ED4534B81F470624008E5C14 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534B71F470624008E5C14 /* Question.m */; };
+		ED4534BE1F4713F8008E5C14 /* QuestionsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534BD1F4713F8008E5C14 /* QuestionsViewModel.m */; };
+		ED4534BF1F4713F8008E5C14 /* QuestionsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534BD1F4713F8008E5C14 /* QuestionsViewModel.m */; };
+		ED4534C21F471869008E5C14 /* QuestionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534C11F471869008E5C14 /* QuestionsData.m */; };
 		ED8E0D1D1F45D6A1006BA37C /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */; };
 		ED9A792A1F45CB0600ACB76C /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9A79291F45CB0600ACB76C /* QuestionCell.xib */; };
 		EDC8FCA91F458BDA00266A50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCA81F458BDA00266A50 /* main.m */; };
@@ -32,6 +35,10 @@
 /* Begin PBXFileReference section */
 		ED4534B61F470624008E5C14 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		ED4534B71F470624008E5C14 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		ED4534BC1F4713F8008E5C14 /* QuestionsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsViewModel.h; sourceTree = "<group>"; };
+		ED4534BD1F4713F8008E5C14 /* QuestionsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsViewModel.m; sourceTree = "<group>"; };
+		ED4534C01F471869008E5C14 /* QuestionsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsData.h; sourceTree = "<group>"; };
+		ED4534C11F471869008E5C14 /* QuestionsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsData.m; sourceTree = "<group>"; };
 		ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		ED9A79291F45CB0600ACB76C /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
@@ -68,6 +75,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED4534C31F472231008E5C14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED4534B61F470624008E5C14 /* Question.h */,
+				ED4534B71F470624008E5C14 /* Question.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ED4534C41F472251008E5C14 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED4534BC1F4713F8008E5C14 /* QuestionsViewModel.h */,
+				ED4534BD1F4713F8008E5C14 /* QuestionsViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED4534C51F47226D008E5C14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDC8FCAD1F458BDA00266A50 /* QuestionsViewController.h */,
+				EDC8FCAE1F458BDA00266A50 /* QuestionsViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		ED4534C61F472282008E5C14 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ED4534C01F471869008E5C14 /* QuestionsData.h */,
+				ED4534C11F471869008E5C14 /* QuestionsData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		EDC8FC9B1F458BD900266A50 = {
 			isa = PBXGroup;
 			children = (
@@ -89,12 +132,12 @@
 		EDC8FCA61F458BD900266A50 /* stackOverFlow */ = {
 			isa = PBXGroup;
 			children = (
+				ED4534C61F472282008E5C14 /* Data */,
+				ED4534C31F472231008E5C14 /* Model */,
+				ED4534C51F47226D008E5C14 /* View */,
+				ED4534C41F472251008E5C14 /* ViewModel */,
 				EDC8FCAA1F458BDA00266A50 /* AppDelegate.h */,
 				EDC8FCAB1F458BDA00266A50 /* AppDelegate.m */,
-				ED4534B61F470624008E5C14 /* Question.h */,
-				ED4534B71F470624008E5C14 /* Question.m */,
-				EDC8FCAD1F458BDA00266A50 /* QuestionsViewController.h */,
-				EDC8FCAE1F458BDA00266A50 /* QuestionsViewController.m */,
 				EDC8FCB01F458BDA00266A50 /* Main.storyboard */,
 				EDC8FCB31F458BDA00266A50 /* Assets.xcassets */,
 				EDC8FCB51F458BDA00266A50 /* LaunchScreen.storyboard */,
@@ -229,8 +272,10 @@
 			files = (
 				EDC8FCAF1F458BDA00266A50 /* QuestionsViewController.m in Sources */,
 				ED8E0D1D1F45D6A1006BA37C /* QuestionCell.m in Sources */,
+				ED4534BE1F4713F8008E5C14 /* QuestionsViewModel.m in Sources */,
 				ED4534B81F470624008E5C14 /* Question.m in Sources */,
 				EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */,
+				ED4534C21F471869008E5C14 /* QuestionsData.m in Sources */,
 				EDC8FCA91F458BDA00266A50 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4534BF1F4713F8008E5C14 /* QuestionsViewModel.m in Sources */,
 				EDC8FCC21F458BDA00266A50 /* stackOverFlowTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

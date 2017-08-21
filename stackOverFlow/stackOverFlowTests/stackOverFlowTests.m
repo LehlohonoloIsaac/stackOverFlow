@@ -7,8 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "QuestionsData.h"
+#import "QuestionsViewModel.h"
 
 @interface stackOverFlowTests : XCTestCase
+
+@property (nonatomic,strong) QuestionsViewModel *questionsViewModelToTest;
+@property (nonatomic,strong) QuestionsData *mockQuestionsData;
+@property (nonatomic,strong) NSIndexPath *indexPath;
 
 @end
 
@@ -17,17 +23,32 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    _mockQuestionsData = [[QuestionsData alloc]init];
+    _questionsViewModelToTest = [[QuestionsViewModel alloc]initWithQuestions:_mockQuestionsData];
+    _indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+-(void)testIfTheCorrectQuestionIsDisplayed{
+    NSString *question = [self.questionsViewModelToTest displayQuestionAtIndexPath:_indexPath];
+    XCTAssertTrue(false);
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+-(void)testIfTheCorrectNumberOfQuestionsIsReturned{
+   XCTAssertTrue(false);
 }
+
+-(void)testIfTheCorrectTimeIsReturned{
+    XCTAssertTrue(false);
+}
+
+-(void)testIfTheCorrectTagsAreReturned{
+   XCTAssertTrue(false);
+}
+
+-(void)testIfCorrectNumberOfAnswersAreReturned{
+   XCTAssertTrue(false);
+}
+
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

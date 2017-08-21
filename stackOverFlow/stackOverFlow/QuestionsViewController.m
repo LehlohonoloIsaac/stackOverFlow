@@ -11,21 +11,21 @@
 
 @interface QuestionsViewController ()
 
+@property (nonatomic,strong) QuestionsViewModel *questionsViewModel;
+
 @end
 
 @implementation QuestionsViewController
-{
-    NSArray *data;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    data = [NSArray arrayWithObjects: @"first question",@"second question",@"third question",@"fourth question",@"fifth question",@"sixth question",@"seventh question",@"eigth question",@"ninth question",@"tenth question", nil];
+    QuestionsData *questionData = [[QuestionsData alloc] init];
+    _questionsViewModel = [[QuestionsViewModel alloc] initWithQuestions:questionData];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [data count];
+    return [self.questionsViewModel numberOfQuestionsInSection:section];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -37,9 +37,11 @@
         cell = [nib objectAtIndex:0];
     }
     
-    cell.question.text = [data objectAtIndex:indexPath.row];
-    
-    //cell.textLabel.text = [data objectAtIndex:indexPath.row];
+    cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
+    cell.numberOfAnswers.text = [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
+    cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];
+    cell.tags.text = [self.questionsViewModel tagsAtIndexPath:indexPath];
+
     return cell;
 }
 
