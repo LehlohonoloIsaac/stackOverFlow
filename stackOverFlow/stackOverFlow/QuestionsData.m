@@ -13,9 +13,17 @@
 
 -(NSArray *)fetchQuestions{
     return @[
-             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:@"4" tags:@"ios objective-C" timeAgo:@"3 years"],
-             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:@"4" tags:@"ios objective-C" timeAgo:@"3 years"],
-             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:@"4" tags:@"ios objective-C" timeAgo:@"3 years"]
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"],
+             [[Question alloc] initWithQuestion:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-C" timeAgo:@"3 years"]
              ];
 }
 

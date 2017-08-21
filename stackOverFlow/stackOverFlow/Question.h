@@ -11,10 +11,10 @@
 @interface Question : NSObject
 
 @property (nonatomic,retain) NSString *question;
-@property (nonatomic,retain) NSString *numberOfAnswers;
+@property (nonatomic,assign) NSUInteger numberOfAnswers;
 @property (nonatomic,retain) NSString *tags;
 @property (nonatomic,retain) NSString *timeAgo;
 
--(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSString *)numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo;
+-(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSUInteger )numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo;
 
 @end

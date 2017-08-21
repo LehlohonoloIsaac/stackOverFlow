@@ -25,7 +25,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.questionsViewModel numberOfQuestionsInSection:section];
+    return [self.questionsViewModel numberOfQuestions];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -38,7 +38,7 @@
     }
     
     cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
-    cell.numberOfAnswers.text = [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
+    cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",(unsigned long) [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath]];
     cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];
     cell.tags.text = [self.questionsViewModel tagsAtIndexPath:indexPath];
 

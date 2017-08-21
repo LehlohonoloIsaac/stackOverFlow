@@ -10,7 +10,7 @@
 
 @implementation Question
 
--(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSString *)numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo{
+-(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSUInteger)numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo{
     
     self = [super init];
     
