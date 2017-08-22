@@ -7,8 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "QuestionsData.h"
+#import "QuestionsViewModel.h"
 
 @interface stackOverFlowTests : XCTestCase
+
+@property (nonatomic,strong) QuestionsViewModel *questionsViewModelToTest;
+@property (nonatomic,strong) QuestionsData *mockQuestionsData;
+@property (nonatomic,strong) NSIndexPath *indexPath;
 
 @end
 
@@ -17,16 +23,47 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    _mockQuestionsData = [[QuestionsData alloc]init];
+    _questionsViewModelToTest = [[QuestionsViewModel alloc]initWithQuestions:_mockQuestionsData];
+    _indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+-(void)testIfTheCorrectQuestionIsDisplayed{
+    NSString *expectedResult = @"What is objective-C";
+    NSString *question = [self.questionsViewModelToTest displayQuestionAtIndexPath:_indexPath];
+    XCTAssertTrue([question isEqualToString:expectedResult]);
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+-(void)testIfTheCorrectNumberOfQuestionsIsReturned{
+    NSUInteger expectedResult = 11;
+    NSUInteger numberOfQuestions = [self.questionsViewModelToTest numberOfQuestions];
+    XCTAssertEqual(expectedResult, numberOfQuestions);
+}
+
+-(void)testIfTheCorrectTimeIsReturned{
+    NSString *expectedResult = @"3 years";
+    NSString *timePosted = [self.questionsViewModelToTest timeAtIndexPath:_indexPath];
+    XCTAssertTrue([timePosted isEqualToString:expectedResult]);
+}
+
+-(void)testIfTheCorrectTagsAreReturned{
+    NSString *expectedResult = @"ios objective-C";
+    NSString *tags = [self.questionsViewModelToTest tagsAtIndexPath:_indexPath];
+    XCTAssertTrue([tags isEqualToString:expectedResult]);
+  
+}
+
+-(void)testIfCorrectNumberOfAnswersAreReturned{
+    NSUInteger expectedResult = 4;
+    NSUInteger numberofAnswers = [self.questionsViewModelToTest numberOfAnswersAtIndexPath:_indexPath];
+    XCTAssertEqual(expectedResult, numberofAnswers);
+}
+
+
+-(void)testIfisAnswerCorrectMethodWorksCorrectly{
+    Boolean expectedResult = true;
+    Boolean result = [self.questionsViewModelToTest isAnswerAccepted:_indexPath];
+    XCTAssertTrue(expectedResult == result);
 }
 
 - (void)testPerformanceExample {
