@@ -15,10 +15,12 @@
 @synthesize question = _question;
 @synthesize numberOfHoursAgo = _numberOfHoursAgo;
 @synthesize tags = _tags;
+@synthesize answersHolder = _answersHolder;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
+   // _answersHolder.layer.cornerRadius = 10;
+    _answersHolder.backgroundColor = UIColor.lightGrayColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

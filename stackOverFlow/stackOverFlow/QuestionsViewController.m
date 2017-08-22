@@ -41,14 +41,15 @@
     cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",(unsigned long) [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath]];
     cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];
     cell.tags.text = [self.questionsViewModel tagsAtIndexPath:indexPath];
-
+    cell.answersHolder.layer.cornerRadius = cell.answersHolder.frame.size.width/2;
+    cell.answersHolder.layer.masksToBounds = true;
     return cell;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 180;
 }
 
 @end

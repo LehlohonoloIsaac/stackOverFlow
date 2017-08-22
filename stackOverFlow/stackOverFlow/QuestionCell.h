@@ -13,4 +13,6 @@
     @property (nonatomic, weak) IBOutlet UILabel *question;
     @property (nonatomic, weak) IBOutlet UILabel *numberOfHoursAgo;
     @property (nonatomic, weak) IBOutlet UILabel *tags;
+    @property (nonatomic,weak) IBOutlet UIView *answersHolder;
+
 @end
