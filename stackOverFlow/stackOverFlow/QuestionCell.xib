@@ -48,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.25340729420000002" green="0.484315514" blue="0.088185613970000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="EKa-Pg-QCM" secondAttribute="trailing" id="6UQ-Pd-rEW"/>
                             <constraint firstItem="TSj-1q-ivo" firstAttribute="centerX" secondItem="EKa-Pg-QCM" secondAttribute="centerX" id="6qV-0R-Cbk"/>
@@ -82,7 +82,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="S8m-1o-Scg" firstAttribute="top" secondItem="udL-WY-J42" secondAttribute="bottom" id="00Y-kh-fdo"/>
                                     <constraint firstItem="S8m-1o-Scg" firstAttribute="trailing" secondItem="udL-WY-J42" secondAttribute="trailing" id="48a-7l-0GV"/>
@@ -105,7 +105,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qpR-65-yq6" secondAttribute="trailing" constant="16" id="Icd-9S-Cbl"/>
                                     <constraint firstItem="qpR-65-yq6" firstAttribute="leading" secondItem="tWZ-Hd-lXM" secondAttribute="leading" id="Pkf-no-Dbr"/>
@@ -114,7 +114,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.99127485525915238" green="1" blue="0.2142839467733989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tWZ-Hd-lXM" firstAttribute="top" secondItem="Rex-2x-Ke3" secondAttribute="bottom" id="5lm-hq-bMk"/>
                             <constraint firstItem="Rex-2x-Ke3" firstAttribute="centerX" secondItem="kEz-zL-EYK" secondAttribute="centerX" id="CcB-x5-5UI"/>
