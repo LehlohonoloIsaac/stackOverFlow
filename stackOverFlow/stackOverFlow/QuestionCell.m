@@ -21,7 +21,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     _answerLabel.text =@"Answers";
-    _answersHolder.backgroundColor = UIColor.lightGrayColor;
+    _answersHolder.backgroundColor = [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
