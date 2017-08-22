@@ -43,6 +43,10 @@
        cell.answerLabel.text = @"Answer";
     }
     
+    if ([self.questionsViewModel isAnswerAccepted:indexPath]) {
+        cell.answersHolder.backgroundColor = UIColor.greenColor;
+    }
+    
     cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
     cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",numberOfAnswers];
     cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];

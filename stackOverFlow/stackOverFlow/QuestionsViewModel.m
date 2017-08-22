@@ -62,4 +62,12 @@
 }
 
 
+-(Boolean)isAnswerAccepted:(NSIndexPath *)indexPath{
+    Question *question = (Question *)[self questionAtIndexPath:indexPath];
+    if (question.isAnswerAccepted) {
+        return true;
+    }
+    return false;
+}
+
 @end
