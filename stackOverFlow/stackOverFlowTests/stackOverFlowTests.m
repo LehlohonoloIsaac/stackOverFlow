@@ -25,7 +25,7 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     _mockQuestionsData = [[QuestionsData alloc]init];
     _questionsViewModelToTest = [[QuestionsViewModel alloc]initWithQuestions:_mockQuestionsData];
-    _indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+    _indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
 }
 
 -(void)testIfTheCorrectQuestionIsDisplayed{
@@ -35,7 +35,7 @@
 }
 
 -(void)testIfTheCorrectNumberOfQuestionsIsReturned{
-    NSUInteger expectedResult = 3;
+    NSUInteger expectedResult = 11;
     NSUInteger numberOfQuestions = [self.questionsViewModelToTest numberOfQuestions];
     XCTAssertEqual(expectedResult, numberOfQuestions);
 }
@@ -59,6 +59,12 @@
     XCTAssertEqual(expectedResult, numberofAnswers);
 }
 
+
+-(void)testIfisAnswerCorrectMethodWorksCorrectly{
+    Boolean expectedResult = true;
+    Boolean result = [self.questionsViewModelToTest isAnswerAccepted:_indexPath];
+    XCTAssertTrue(expectedResult == result);
+}
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
