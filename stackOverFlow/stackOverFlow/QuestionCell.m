@@ -16,10 +16,11 @@
 @synthesize numberOfHoursAgo = _numberOfHoursAgo;
 @synthesize tags = _tags;
 @synthesize answersHolder = _answersHolder;
+@synthesize answerLabel = _answerLabel;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-   // _answersHolder.layer.cornerRadius = 10;
+    _answerLabel.text =@"Answers";
     _answersHolder.backgroundColor = UIColor.lightGrayColor;
 }
 

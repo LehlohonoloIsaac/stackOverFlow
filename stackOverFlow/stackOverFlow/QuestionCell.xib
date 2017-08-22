@@ -15,20 +15,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" restorationIdentifier="questionCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="118" id="4iv-eL-Mus" customClass="QuestionCell">
-            <rect key="frame" x="0.0" y="0.0" width="442" height="180"/>
+            <rect key="frame" x="0.0" y="0.0" width="442" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="4iv-eL-Mus" id="ut2-2P-E24">
-                <rect key="frame" x="0.0" y="0.0" width="442" height="180"/>
+                <rect key="frame" x="0.0" y="0.0" width="442" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Vm-hu-7nP" userLabel="answer">
-                        <rect key="frame" x="8" y="8" width="130" height="163.5"/>
+                        <rect key="frame" x="8" y="8" width="106" height="133.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSj-1q-ivo">
-                                <rect key="frame" x="16" y="14" width="98" height="98"/>
+                                <rect key="frame" x="16" y="14" width="74" height="74"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE2-qo-UPl">
-                                        <rect key="frame" x="44" y="38" width="10.5" height="21"/>
+                                        <rect key="frame" x="32" y="26" width="10.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Answers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EKa-Pg-QCM">
-                                <rect key="frame" x="0.0" y="123" width="130" height="32.5"/>
+                                <rect key="frame" x="0.0" y="99" width="106" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,19 +64,19 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEz-zL-EYK">
-                        <rect key="frame" x="138" y="8" width="296" height="163.5"/>
+                        <rect key="frame" x="114" y="8" width="320" height="133.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rex-2x-Ke3" userLabel="questionAndTags">
-                                <rect key="frame" x="0.0" y="0.0" width="296" height="131"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searchbar not working" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="udL-WY-J42">
-                                        <rect key="frame" x="0.0" y="0.0" width="296" height="104.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ios      uiscrollview" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8m-1o-Scg">
-                                        <rect key="frame" x="0.0" y="104.5" width="296" height="7.5"/>
+                                        <rect key="frame" x="0.0" y="85" width="320" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -87,7 +87,6 @@
                                     <constraint firstItem="S8m-1o-Scg" firstAttribute="top" secondItem="udL-WY-J42" secondAttribute="bottom" id="00Y-kh-fdo"/>
                                     <constraint firstItem="S8m-1o-Scg" firstAttribute="trailing" secondItem="udL-WY-J42" secondAttribute="trailing" id="48a-7l-0GV"/>
                                     <constraint firstItem="S8m-1o-Scg" firstAttribute="leading" secondItem="udL-WY-J42" secondAttribute="leading" id="DHS-L1-CTb"/>
-                                    <constraint firstAttribute="bottom" secondItem="S8m-1o-Scg" secondAttribute="bottom" constant="19" id="EdE-en-9Rv"/>
                                     <constraint firstAttribute="trailing" secondItem="udL-WY-J42" secondAttribute="trailing" id="LgP-9X-Q0n"/>
                                     <constraint firstItem="S8m-1o-Scg" firstAttribute="width" secondItem="udL-WY-J42" secondAttribute="width" id="NvC-vR-tNf"/>
                                     <constraint firstItem="udL-WY-J42" firstAttribute="height" secondItem="Rex-2x-Ke3" secondAttribute="height" multiplier="0.8" id="WWi-Ww-BLT"/>
@@ -97,10 +96,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWZ-Hd-lXM" userLabel="timeAgo">
-                                <rect key="frame" x="0.0" y="131" width="296" height="32.5"/>
+                                <rect key="frame" x="0.0" y="107" width="320" height="26.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpR-65-yq6">
-                                        <rect key="frame" x="0.0" y="0.5" width="280" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="0.5" width="304" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -130,24 +129,23 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="kEz-zL-EYK" firstAttribute="leading" secondItem="4Vm-hu-7nP" secondAttribute="trailing" id="6jg-bX-H1L"/>
-                    <constraint firstItem="kEz-zL-EYK" firstAttribute="centerY" secondItem="ut2-2P-E24" secondAttribute="centerY" id="GuG-W7-qzb"/>
                     <constraint firstAttribute="bottomMargin" secondItem="4Vm-hu-7nP" secondAttribute="bottom" id="HAW-4E-oEn"/>
                     <constraint firstItem="4Vm-hu-7nP" firstAttribute="top" secondItem="ut2-2P-E24" secondAttribute="topMargin" id="Imo-OZ-dhN"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kEz-zL-EYK" secondAttribute="trailing" id="NBY-Cp-Zmq"/>
                     <constraint firstItem="kEz-zL-EYK" firstAttribute="top" secondItem="ut2-2P-E24" secondAttribute="topMargin" id="U1j-H9-XhZ"/>
-                    <constraint firstItem="4Vm-hu-7nP" firstAttribute="centerY" secondItem="ut2-2P-E24" secondAttribute="centerY" id="WeD-zi-sxB"/>
                     <constraint firstItem="4Vm-hu-7nP" firstAttribute="leading" secondItem="ut2-2P-E24" secondAttribute="leadingMargin" id="flz-r0-Hw1"/>
                     <constraint firstAttribute="bottomMargin" secondItem="kEz-zL-EYK" secondAttribute="bottom" id="zJo-hL-k51"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="answerLabel" destination="EKa-Pg-QCM" id="Qbg-RW-7tp"/>
                 <outlet property="answersHolder" destination="TSj-1q-ivo" id="n0f-Jh-YcN"/>
                 <outlet property="numberOfAnswers" destination="DE2-qo-UPl" id="eCZ-3t-wBy"/>
                 <outlet property="numberOfHoursAgo" destination="qpR-65-yq6" id="2rQ-T1-Izw"/>
                 <outlet property="question" destination="udL-WY-J42" id="Lj9-OH-IfQ"/>
                 <outlet property="tags" destination="S8m-1o-Scg" id="gWs-OA-KdM"/>
             </connections>
-            <point key="canvasLocation" x="-613" y="22"/>
+            <point key="canvasLocation" x="-613" y="21.5"/>
         </tableViewCell>
     </objects>
 </document>
