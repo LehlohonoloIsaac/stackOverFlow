@@ -14,7 +14,8 @@
 @property (nonatomic,assign) NSUInteger numberOfAnswers;
 @property (nonatomic,retain) NSString *tags;
 @property (nonatomic,retain) NSString *timeAgo;
+@property (nonatomic,assign) Boolean isAnswerAccepted;
 
--(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSUInteger )numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo;
+-(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSUInteger )numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo isAnswerAccepted:(Boolean)isAnswerAccepted;
 
 @end

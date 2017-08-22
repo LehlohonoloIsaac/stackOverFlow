@@ -37,18 +37,29 @@
         cell = [nib objectAtIndex:0];
     }
     
+    NSUInteger numberOfAnswers = (unsigned long) [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
+    
+    if (numberOfAnswers == 1) {
+       cell.answerLabel.text = @"Answer";
+    }
+    
+    if ([self.questionsViewModel isAnswerAccepted:indexPath]) {
+        cell.answersHolder.backgroundColor = UIColor.greenColor;
+    }
+    
     cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
-    cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",(unsigned long) [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath]];
+    cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",numberOfAnswers];
     cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];
     cell.tags.text = [self.questionsViewModel tagsAtIndexPath:indexPath];
-
+    cell.answersHolder.layer.cornerRadius = cell.answersHolder.frame.size.width/2;
+    cell.answersHolder.layer.masksToBounds = true;
     return cell;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 150;
 }
 
 @end
