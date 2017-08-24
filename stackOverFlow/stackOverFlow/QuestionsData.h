@@ -11,6 +11,6 @@
 @interface QuestionsData : NSObject
 
 -(NSArray *)fetchQuestions;
--(NSArray *)fetchQuestionsFromStackOverFlowApi;
+-(void)fetchQuestionsFromStackOverFlowApi;
 
 @end

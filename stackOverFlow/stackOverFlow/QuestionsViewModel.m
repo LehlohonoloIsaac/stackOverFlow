@@ -29,6 +29,7 @@
     
     _questionsData = questionsData;
     _questions = [questionsData fetchQuestions];
+    [questionsData fetchQuestionsFromStackOverFlowApi];
   
     return self;
 }
