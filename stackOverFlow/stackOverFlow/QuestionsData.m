@@ -32,7 +32,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"https://api.stackexchange.com/2.2/questions?pagesize=50&order=asc&sort=creation&tagged=ios&site=stackoverflow&filter=!bA1d_O)D.qiH*B"]];
     NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response, NSError *error){
-        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
             NSError *jsonError;
             NSArray *jsonResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
             NSLog(@"%@", jsonResults);
