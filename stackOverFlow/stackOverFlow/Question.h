@@ -10,12 +10,13 @@
 
 @interface Question : NSObject
 
-@property (nonatomic,retain) NSString *question;
-@property (nonatomic,assign) NSUInteger numberOfAnswers;
+@property (nonatomic,retain) NSString *title;
+@property (nonatomic,assign) NSUInteger answer_count;
 @property (nonatomic,retain) NSString *tags;
-@property (nonatomic,retain) NSString *timeAgo;
+@property (nonatomic,retain) NSDate *creation_date;
 @property (nonatomic,assign) Boolean isAnswerAccepted;
+@property (nonatomic,assign) Boolean is_answered;
 
--(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSUInteger )numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo isAnswerAccepted:(Boolean)isAnswerAccepted;
+-(instancetype)initWithTitle:(NSString *)title numberOfAnswers:(NSUInteger )numberOfAnswers tags:(NSString *)tags timeAgo:(NSDate *)timeAgo isAnswerAccepted:(Boolean)isAnswerAccepted isQuestionAnswered:(Boolean)isAnswered;
 
 @end

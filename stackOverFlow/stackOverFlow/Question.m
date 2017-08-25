@@ -10,7 +10,7 @@
 
 @implementation Question
 
--(instancetype)initWithQuestion:(NSString *)question numberOfAnswers:(NSUInteger)numberOfAnswers tags:(NSString *)tags timeAgo:(NSString *)timeAgo isAnswerAccepted:(Boolean)isAnswerAccepted{
+-(instancetype)initWithTitle:(NSString *)title numberOfAnswers:(NSUInteger )numberOfAnswers tags:(NSString *)tags timeAgo:(NSDate *)timeAgo isAnswerAccepted:(Boolean)isAnswerAccepted isQuestionAnswered:(Boolean)isAnswered{
     
     self = [super init];
     
@@ -18,11 +18,12 @@
         return nil;
     }
     
-    _question = question;
-    _numberOfAnswers = numberOfAnswers;
+    _title = title;
+    _answer_count = numberOfAnswers;
     _tags = tags;
-    _timeAgo = timeAgo;
+    _creation_date = timeAgo;
     _isAnswerAccepted = isAnswerAccepted;
+    _is_answered = isAnswered;
     
     return self;
 }

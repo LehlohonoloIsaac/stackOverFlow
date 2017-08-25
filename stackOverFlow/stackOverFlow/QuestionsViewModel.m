@@ -49,17 +49,17 @@
 
 -(NSString *)timeAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return [NSString stringWithFormat:@"%@", question.timeAgo];
+    return [NSString stringWithFormat:@"%@", question.creation_date];
 }
 
 -(NSUInteger)numberOfAnswersAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return question.numberOfAnswers;
+    return question.answer_count;
 }
 
 -(NSString *)displayQuestionAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return question.question;
+    return question.title;
 }
 
 
