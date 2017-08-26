@@ -73,7 +73,7 @@
 }
 
 -(NSString *)setAnswerLabelAtIndexPath:(NSIndexPath *)indexPath{
-    return [self numberOfAnswersAtIndexPath:indexPath] == 0 ? @"Answer" : @"Answers";
+    return [self numberOfAnswersAtIndexPath:indexPath] == 1 ? @"Answer" : @"Answers";
 }
 
 @end

@@ -53,6 +53,12 @@
   
 }
 
+-(void)testIfCorrectAnswerLabelIsSet{
+    NSString *expectedResult = @"Answers";
+    NSString *answerLabel = [self.questionsViewModelToTest setAnswerLabelAtIndexPath:_indexPath];
+    XCTAssertTrue([answerLabel isEqualToString:expectedResult]);
+}
+
 -(void)testIfCorrectNumberOfAnswersAreReturned{
     NSUInteger expectedResult = 4;
     NSUInteger numberofAnswers = [self.questionsViewModelToTest numberOfAnswersAtIndexPath:_indexPath];

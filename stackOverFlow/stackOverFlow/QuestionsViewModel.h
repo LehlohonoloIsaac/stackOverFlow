@@ -21,5 +21,6 @@
 -(NSUInteger)numberOfAnswersAtIndexPath:(NSIndexPath *)indexPath;
 -(NSString *)displayQuestionAtIndexPath:(NSIndexPath *)indexPath;
 -(Boolean)isAnswerAccepted:(NSIndexPath *)indexPath;
+-(NSString *)setAnswerLabelAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
