@@ -64,13 +64,16 @@
     return question.title;
 }
 
-
 -(Boolean)isAnswerAccepted:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
     if (question.isAnswerAccepted) {
         return true;
     }
     return false;
+}
+
+-(NSString *)setAnswerLabelAtIndexPath:(NSIndexPath *)indexPath{
+    return [self numberOfAnswersAtIndexPath:indexPath] == 0 ? @"Answer" : @"Answers";
 }
 
 @end
