@@ -44,7 +44,9 @@
 
 -(NSString *)tagsAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return [NSString stringWithFormat:@"%@", question.tags];
+    NSString *tags = [question.tags componentsJoinedByString:@"   "];
+    NSLog(@"%@", tags);
+    return tags;
 }
 
 -(NSString *)timeAtIndexPath:(NSIndexPath *)indexPath{
