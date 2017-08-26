@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "QuestionsData.h"
 #import "Question.h"
 
@@ -22,5 +23,6 @@
 -(NSString *)displayQuestionAtIndexPath:(NSIndexPath *)indexPath;
 -(Boolean)isAnswerAccepted:(NSIndexPath *)indexPath;
 -(NSString *)setAnswerLabelAtIndexPath:(NSIndexPath *)indexPath;
+-(UIColor *)setBackgroundColorForAnswerHolderAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -38,15 +38,8 @@
     }
     
     NSUInteger numberOfAnswers = (unsigned long) [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
-    
-    if (numberOfAnswers == 1) {
-       cell.answerLabel.text = @"Answer";
-    }
-    
-    if ([self.questionsViewModel isAnswerAccepted:indexPath]) {
-        cell.answersHolder.backgroundColor = UIColor.greenColor;
-    }
-    
+    cell.answersHolder.backgroundColor = [self.questionsViewModel setBackgroundColorForAnswerHolderAtIndexPath:indexPath];
+    cell.answerLabel.text = [self.questionsViewModel setAnswerLabelAtIndexPath:indexPath];
     cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
     cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",numberOfAnswers];
     cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];

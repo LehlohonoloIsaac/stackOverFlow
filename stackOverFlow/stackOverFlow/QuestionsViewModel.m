@@ -76,4 +76,8 @@
     return [self numberOfAnswersAtIndexPath:indexPath] == 1 ? @"Answer" : @"Answers";
 }
 
+-(UIColor *)setBackgroundColorForAnswerHolderAtIndexPath:(NSIndexPath *)indexPath{
+    return [self isAnswerAccepted:indexPath]? UIColor.greenColor : [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
+}
+
 @end

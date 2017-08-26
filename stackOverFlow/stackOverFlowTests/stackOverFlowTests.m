@@ -65,6 +65,12 @@
     XCTAssertEqual(expectedResult, numberofAnswers);
 }
 
+-(void)testIfCorrectColorForAnswerHolderIsReturned{
+    UIColor *expectedColor = [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
+    UIColor *color = [self.questionsViewModelToTest setBackgroundColorForAnswerHolderAtIndexPath:_indexPath];
+    XCTAssertEqualObjects(expectedColor, color);
+}
+
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
