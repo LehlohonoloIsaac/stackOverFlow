@@ -12,11 +12,11 @@
 
 @property (nonatomic,retain) NSString *title;
 @property (nonatomic,assign) NSUInteger answer_count;
-@property (nonatomic,retain) NSString *tags;
+@property (nonatomic,retain) NSArray *tags;
 @property (nonatomic,retain) NSDate *creation_date;
 @property (nonatomic,assign) Boolean isAnswerAccepted;
 @property (nonatomic,assign) Boolean is_answered;
 
--(instancetype)initWithTitle:(NSString *)title numberOfAnswers:(NSUInteger )numberOfAnswers tags:(NSString *)tags timeAgo:(NSDate *)timeAgo isAnswerAccepted:(Boolean)isAnswerAccepted isQuestionAnswered:(Boolean)isAnswered;
+-(instancetype)initWithTitle:(NSString *)title numberOfAnswers:(NSUInteger )numberOfAnswers tags:(NSArray *)tags timeAgo:(NSDate *)timeAgo isAnswerAccepted:(Boolean)isAnswerAccepted isQuestionAnswered:(Boolean)isAnswered;
 
 @end

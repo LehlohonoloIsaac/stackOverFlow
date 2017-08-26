@@ -29,7 +29,7 @@
     
     _questionsData = questionsData;
     _questions = [questionsData fetchQuestions];
-    [questionsData fetchQuestionsFromStackOverFlowApi];
+    //[questionsData fetchQuestionsFromStackOverFlowApi];
   
     return self;
 }

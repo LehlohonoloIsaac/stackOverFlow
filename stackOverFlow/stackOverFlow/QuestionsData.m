@@ -15,16 +15,16 @@
 
 -(NSArray *)fetchQuestions{
     return @[
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:0 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:false],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:2 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:1 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:0 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:false],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:30 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:130 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:1 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:4 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:1 tags:@"ios objective-c" timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true]
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:4 tags:@[@"ios",@"objective-c"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:0 tags:@[@"ios",@"objective-c"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:false],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:2 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:1 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:0 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:false],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:30 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:130 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:1 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:4 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:1 tags:@[@"ios",@"objective-c"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true]
              ];
 }
 
