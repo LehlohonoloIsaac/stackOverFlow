@@ -15,9 +15,9 @@
 
 -(NSArray *)fetchQuestions{
     return @[
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:4 tags:@[@"ios",@"objective-c"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"What is the difference between a struct and a class in Objective-C?" numberOfAnswers:4 tags:@[@"ios",@"objective-c",@"struct",@"class"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
              [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:0 tags:@[@"ios",@"objective-c"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:false],
-             [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:2 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true],
+             [[Question alloc] initWithTitle:@"I have created an NSArray that contains 20 NSString values, How do I append another Array into this one?" numberOfAnswers:50 tags:@[@"ios",@"objective-c",@"NSArray",@"swift",@"programming",@"data types",@"dynamic arrays"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true],
              [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:1 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
              [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:0 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:false],
              [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:30 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
