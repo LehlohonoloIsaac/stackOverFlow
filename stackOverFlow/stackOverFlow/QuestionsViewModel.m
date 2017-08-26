@@ -45,7 +45,6 @@
 -(NSString *)tagsAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
     NSString *tags = [question.tags componentsJoinedByString:@"   "];
-    NSLog(@"%@", tags);
     return tags;
 }
 
@@ -66,10 +65,7 @@
 
 -(Boolean)isAnswerAccepted:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    if (question.isAnswerAccepted) {
-        return true;
-    }
-    return false;
+    return question.isAnswerAccepted;
 }
 
 -(NSString *)setAnswerLabelAtIndexPath:(NSIndexPath *)indexPath{
