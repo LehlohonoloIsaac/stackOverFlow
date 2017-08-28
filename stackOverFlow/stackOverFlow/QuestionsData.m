@@ -57,13 +57,14 @@
 }
 
 
--(NSMutableArray *)questionsFromJSON:(NSData *)objectNotation error:(NSError *)error{
+-(void)questionsFromJSON:(NSData *)objectNotation error:(NSError *)error{
     NSError *localError = nil;
     NSDictionary *parsedobject = [NSJSONSerialization JSONObjectWithData:objectNotation options:0 error:&localError];
+    
+    NSLog(@"%@", parsedobject);
     if (localError != nil) {
         error = localError;
-        return nil;
-    }
+    }else{
     NSArray *items = [parsedobject valueForKey:@"items"];
     
     for (NSDictionary *questionDict in items) {
@@ -77,7 +78,7 @@
         [questions addObject:question];
         NSLog(@"%@", @"Adding question objects");
     }
-    return questions;
+    }
 }
 
 @end
