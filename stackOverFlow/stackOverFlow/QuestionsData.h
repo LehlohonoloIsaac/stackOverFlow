@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QuestionsData : NSObject
+@protocol QuestionDataDelegate <NSObject>
 
+@required
+-(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions;
+@end
+
+@interface QuestionsData : NSObject
+@property (nonatomic,weak) id <QuestionDataDelegate> delegate;
 -(NSArray *)fetchQuestions;
--(NSMutableArray *)fetchQuestionsFromStackOverFlowApi;
+-(void)fetchQuestionsFromStackOverFlowApi;
+-(NSMutableArray *)getQuestions;
 
 @end

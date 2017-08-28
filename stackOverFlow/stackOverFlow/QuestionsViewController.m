@@ -10,16 +10,16 @@
 #import "QuestionCell.h"
 
 @interface QuestionsViewController ()
-
-@property (nonatomic,strong) QuestionsViewModel *questionsViewModel;
-
 @end
 
 @implementation QuestionsViewController
 
+@synthesize tableView = _tableView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     QuestionsData *questionData = [[QuestionsData alloc] init];
+    questionData.delegate = self;
     _questionsViewModel = [[QuestionsViewModel alloc] initWithQuestions:questionData];
 }
 
@@ -53,6 +53,12 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 150;
+}
+
+-(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions{
+    _questions = questions;
+    [_tableView reloadData];
+    NSLog(@"Finished fetching questions...");
 }
 
 @end

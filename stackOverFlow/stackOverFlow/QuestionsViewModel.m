@@ -13,7 +13,7 @@
 @interface QuestionsViewModel()
 
 @property (nonatomic,strong,readonly) QuestionsData *questionsData;
-@property (nonatomic, strong) NSArray *questions;
+@property (nonatomic, strong) NSMutableArray *questions;
 
 @end
 
@@ -28,9 +28,8 @@
     }
     
     _questionsData = questionsData;
-    _questions = [questionsData fetchQuestions];
-    //[questionsData fetchQuestionsFromStackOverFlowApi];
-  
+    [questionsData fetchQuestionsFromStackOverFlowApi];
+    _questions = [questionsData getQuestions];
     return self;
 }
 

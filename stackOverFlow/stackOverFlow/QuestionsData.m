@@ -28,19 +28,23 @@
              ];
 }
 
--(NSMutableArray *)fetchQuestionsFromStackOverFlowApi{
-    
+-(NSMutableArray *)getQuestions{
+    return questions;
+}
+
+-(void)fetchQuestionsFromStackOverFlowApi{
+    questions = [[NSMutableArray alloc]init];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"https://api.stackexchange.com/2.2/questions?pagesize=50&order=asc&sort=creation&tagged=ios&site=stackoverflow&filter=!bA1d_O)D.qiH*B"]];
     NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response, NSError *error){
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
-            questions = [self questionsFromJSON:data error:error];
-            NSLog(@"%@", questions);
+            [self questionsFromJSON:data error:error];
+            [self.delegate didFetchQuestionsFromStackOverFlow:questions];
         });
     }];
     [task resume];
-    return questions;
 }
+
 
 -(NSURLSession *)getURLSession{
     static NSURLSession *session = nil;
@@ -60,9 +64,6 @@
         error = localError;
         return nil;
     }
-    
-    NSMutableArray *questionsObjects = [[NSMutableArray alloc] init];
-    
     NSArray *items = [parsedobject valueForKey:@"items"];
     
     for (NSDictionary *questionDict in items) {
@@ -73,9 +74,10 @@
                 [question setValue:[questionDict valueForKey:key] forKey:key];
             }
         }
-        [questionsObjects addObject:question];
+        [questions addObject:question];
+        NSLog(@"%@", @"Adding question objects");
     }
-    return questionsObjects;
+    return questions;
 }
 
 @end
