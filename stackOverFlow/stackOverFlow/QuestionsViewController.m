@@ -10,16 +10,16 @@
 #import "QuestionCell.h"
 
 @interface QuestionsViewController ()
-
-@property (nonatomic,strong) QuestionsViewModel *questionsViewModel;
-
 @end
 
 @implementation QuestionsViewController
 
+@synthesize tableView = _tableView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     QuestionsData *questionData = [[QuestionsData alloc] init];
+    questionData.delegate = self;
     _questionsViewModel = [[QuestionsViewModel alloc] initWithQuestions:questionData];
 }
 
@@ -38,15 +38,8 @@
     }
     
     NSUInteger numberOfAnswers = (unsigned long) [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
-    
-    if (numberOfAnswers == 1) {
-       cell.answerLabel.text = @"Answer";
-    }
-    
-    if ([self.questionsViewModel isAnswerAccepted:indexPath]) {
-        cell.answersHolder.backgroundColor = UIColor.greenColor;
-    }
-    
+    cell.answersHolder.backgroundColor = [self.questionsViewModel setBackgroundColorForAnswerHolderAtIndexPath:indexPath];
+    cell.answerLabel.text = [self.questionsViewModel setAnswerLabelAtIndexPath:indexPath];
     cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
     cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",numberOfAnswers];
     cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];
@@ -60,6 +53,12 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 150;
+}
+
+-(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions{
+    _questions = questions;
+    [_tableView reloadData];
+    NSLog(@"Finished fetching questions...");
 }
 
 @end

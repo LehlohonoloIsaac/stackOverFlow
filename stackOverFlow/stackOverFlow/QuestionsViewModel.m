@@ -13,7 +13,7 @@
 @interface QuestionsViewModel()
 
 @property (nonatomic,strong,readonly) QuestionsData *questionsData;
-@property (nonatomic, strong) NSArray *questions;
+@property (nonatomic, strong) NSMutableArray *questions;
 
 @end
 
@@ -28,8 +28,8 @@
     }
     
     _questionsData = questionsData;
-    _questions = [questionsData fetchQuestions];
-  
+    [questionsData fetchQuestionsFromStackOverFlowApi];
+    _questions = [questionsData getQuestions];
     return self;
 }
 
@@ -43,31 +43,36 @@
 
 -(NSString *)tagsAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return [NSString stringWithFormat:@"%@", question.tags];
+    NSString *tags = [question.tags componentsJoinedByString:@"   "];
+    return tags;
 }
 
 -(NSString *)timeAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return [NSString stringWithFormat:@"%@", question.timeAgo];
+    return [NSString stringWithFormat:@"%@", question.creation_date];
 }
 
 -(NSUInteger)numberOfAnswersAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return question.numberOfAnswers;
+    return question.answer_count;
 }
 
 -(NSString *)displayQuestionAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return question.question;
+    return question.title;
 }
-
 
 -(Boolean)isAnswerAccepted:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    if (question.isAnswerAccepted) {
-        return true;
-    }
-    return false;
+    return question.isAnswerAccepted;
+}
+
+-(NSString *)setAnswerLabelAtIndexPath:(NSIndexPath *)indexPath{
+    return [self numberOfAnswersAtIndexPath:indexPath] == 1 ? @"Answer" : @"Answers";
+}
+
+-(UIColor *)setBackgroundColorForAnswerHolderAtIndexPath:(NSIndexPath *)indexPath{
+    return [self isAnswerAccepted:indexPath]? UIColor.greenColor : [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
 }
 
 @end
