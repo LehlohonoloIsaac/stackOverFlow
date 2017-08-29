@@ -80,4 +80,9 @@
     return now;
 }
 
+-(NSDate *)getTimeAtIndexPath:(NSIndexPath *)indexPath{
+    Question *question = (Question *)[self questionAtIndexPath:indexPath];
+    return question.creation_date;
+}
+
 @end
