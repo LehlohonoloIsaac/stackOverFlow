@@ -49,7 +49,12 @@
 
 -(NSString *)timeAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    return [NSString stringWithFormat:@"%@", question.creation_date];
+    long hoursPosted = [self convertTimeToHours:question.creation_date];
+    long now = [self convertTimeToHours:[NSDate date]];
+    NSLog(@"%@ %ld",@"Hours question was posted: ",hoursPosted);
+    NSLog(@"%@ %ld",@"now: ",now);
+    long hoursAgo = now-hoursPosted;
+    return [NSString stringWithFormat:@"%ld %@",hoursAgo,@"hours ago"];
 }
 
 -(NSUInteger)numberOfAnswersAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,6 +88,12 @@
 -(NSDate *)getTimeAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
     return question.creation_date;
+}
+
+-(long)convertTimeToHours:(NSDate *)date{
+    NSString *creationDate = [NSString stringWithFormat:@"%@",date];
+    long creationDateUnixTimestamp = (unsigned long)creationDate;
+    return creationDateUnixTimestamp/(1000*60*60);
 }
 
 @end
