@@ -24,5 +24,6 @@
 -(Boolean)isAnswerAccepted:(NSIndexPath *)indexPath;
 -(NSString *)setAnswerLabelAtIndexPath:(NSIndexPath *)indexPath;
 -(UIColor *)setBackgroundColorForAnswerHolderAtIndexPath:(NSIndexPath *)indexPath;
+-(NSDate *)getCurrentTime;
 
 @end

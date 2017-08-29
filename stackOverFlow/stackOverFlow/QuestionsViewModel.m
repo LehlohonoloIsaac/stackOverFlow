@@ -75,4 +75,9 @@
     return [self isAnswerAccepted:indexPath]? UIColor.greenColor : [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
 }
 
+-(NSDate *)getCurrentTime{
+    NSDate *now = [[NSDate alloc]init];
+    return now;
+}
+
 @end
