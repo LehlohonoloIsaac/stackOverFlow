@@ -77,7 +77,7 @@
 }
 
 -(UIColor *)setBackgroundColorForAnswerHolderAtIndexPath:(NSIndexPath *)indexPath{
-    return [self isAnswerAccepted:indexPath]? UIColor.greenColor : [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
+    return [self questionHasAcceptedAnswerAtIndexPath:indexPath]? UIColor.greenColor : [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
 }
 
 -(NSDate *)getCurrentTime{
@@ -94,6 +94,11 @@
     NSString *creationDate = [NSString stringWithFormat:@"%@",date];
     long creationDateUnixTimestamp = (unsigned long)creationDate;
     return creationDateUnixTimestamp/(1000*60*60);
+}
+
+-(BOOL)questionHasAcceptedAnswerAtIndexPath:(NSIndexPath *)indexPath{
+    Question *question = (Question *)[self questionAtIndexPath:indexPath];
+    return question.accepted_answer_id != 0? true: false;
 }
 
 @end
