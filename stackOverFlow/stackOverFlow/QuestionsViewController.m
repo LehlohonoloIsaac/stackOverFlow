@@ -71,6 +71,7 @@
 -(UILabel *)createTagWithTagNamed:(NSString *)tagName{
     UILabel *label = [[UILabel alloc] init];
     [label setText:tagName];
+    [label setBackgroundColor:[UIColor.lightGrayColor colorWithAlphaComponent:0.4]];
     return label;
 }
 @end
