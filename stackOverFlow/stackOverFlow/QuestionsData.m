@@ -35,7 +35,7 @@
 -(void)fetchQuestionsFromStackOverFlowApi{
     questions = [[NSMutableArray alloc]init];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"https://api.stackexchange.com/2.2/questions?pagesize=50&order=desc&sort=activity&tagged=ios&site=stackoverflow"]];
+    [request setURL:[NSURL URLWithString:@"https://api.stackexchange.com/2.2/questions?pagesize=100&order=asc&sort=creation&tagged=ios&site=stackoverflow"]];
     NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response, NSError *error){
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
             [self questionsFromJSON:data error:error];

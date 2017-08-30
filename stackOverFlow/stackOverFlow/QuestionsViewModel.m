@@ -51,10 +51,8 @@
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
     long hoursPosted = [self convertTimeToHours:question.creation_date];
     long now = [self convertTimeToHours:[NSDate date]];
-    NSLog(@"%@ %ld",@"Hours question was posted: ",hoursPosted);
-    NSLog(@"%@ %ld",@"now: ",now);
-    long hoursAgo = now-hoursPosted;
-    return [NSString stringWithFormat:@"%ld %@",hoursAgo,@"hours ago"];
+    long hoursAgo = labs(now-hoursPosted);
+    return hoursAgo==1 ? [NSString stringWithFormat:@"%ld %@",hoursAgo,@"hour ago"]: [NSString stringWithFormat:@"%ld %@",hoursAgo,@"hours ago"];
 }
 
 -(NSUInteger)numberOfAnswersAtIndexPath:(NSIndexPath *)indexPath{
