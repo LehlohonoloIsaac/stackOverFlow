@@ -26,5 +26,6 @@
 -(UIColor *)setBackgroundColorForAnswerHolderAtIndexPath:(NSIndexPath *)indexPath;
 -(NSDate *)getCurrentTime;
 -(NSDate *)getTimeAtIndexPath:(NSIndexPath *)indexPath;
+-(BOOL)questionHasAcceptedAnswerAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
