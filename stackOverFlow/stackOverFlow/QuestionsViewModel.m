@@ -41,10 +41,9 @@
     return _questions[indexPath.row];
 }
 
--(NSString *)tagsAtIndexPath:(NSIndexPath *)indexPath{
+-(NSArray *)tagsAtIndexPath:(NSIndexPath *)indexPath{
     Question *question = (Question *)[self questionAtIndexPath:indexPath];
-    NSString *tags = [question.tags componentsJoinedByString:@"   "];
-    return tags;
+    return question.tags;
 }
 
 -(NSString *)timeAtIndexPath:(NSIndexPath *)indexPath{
