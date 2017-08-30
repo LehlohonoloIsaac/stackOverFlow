@@ -17,6 +17,7 @@
 @synthesize tags = _tags;
 @synthesize answersHolder = _answersHolder;
 @synthesize answerLabel = _answerLabel;
+@synthesize tagsStack = _tagsStack;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
