@@ -13,7 +13,7 @@
 
 @interface QuestionsListViewModel : NSObject
 
--(instancetype)initWithQuestions:(QuestionsList *)questionsList;
+-(instancetype)initWithQuestionsList:(QuestionsList *)questionsList;
 
 -(NSUInteger)numberOfQuestions;
 -(Question *)questionAtIndexPath:(NSIndexPath *)indexPath;

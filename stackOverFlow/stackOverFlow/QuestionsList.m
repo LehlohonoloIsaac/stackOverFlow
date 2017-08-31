@@ -27,11 +27,11 @@
     if (!self) {
         return nil;
     }
-    [self fetchQuestions];
+    [self fetchMockQuestions];
     return self;
 }
 
--(void)fetchQuestions
+-(void)fetchMockQuestions
 {
     questions = [[NSMutableArray alloc]init];
     NSArray* mockQuestions = [[NSArray alloc]init];
@@ -53,7 +53,7 @@
     }
 }
 
--(NSMutableArray *)getQuestions{
+-(NSMutableArray *)fetchQuestions{
     return questions;
 }
 

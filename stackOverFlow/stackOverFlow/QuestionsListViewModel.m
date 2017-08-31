@@ -19,7 +19,7 @@
 
 @implementation QuestionsListViewModel
 
--(instancetype)initWithQuestions:(QuestionsList *)questionsList{
+-(instancetype)initWithQuestionsList:(QuestionsList *)questionsList{
     
     self = [super init];
     
@@ -28,7 +28,7 @@
     }
     
     _questionsList = questionsList;
-    _questions = [questionsList getQuestions];
+    _questions = [questionsList fetchQuestions];
     return self;
 }
 

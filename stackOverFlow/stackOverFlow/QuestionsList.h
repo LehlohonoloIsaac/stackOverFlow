@@ -20,8 +20,7 @@ typedef id<QuestionsListDelegate> QuestionsListDelegate;
 -(instancetype)initWithMockQuestions;
 -(instancetype)initWithQuestions;
 @property (nonatomic,weak) QuestionsListDelegate delegate;
--(void)fetchQuestions;
+-(void)fetchMockQuestions;
 -(void)fetchQuestionsFromStackOverFlowApi;
--(NSMutableArray *)getQuestions;
-
+-(NSMutableArray*)fetchQuestions;
 @end

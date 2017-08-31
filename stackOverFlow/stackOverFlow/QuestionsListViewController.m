@@ -20,7 +20,7 @@
     [super viewDidLoad];
     QuestionsList *questionsList = [[QuestionsList alloc] initWithMockQuestions];
     questionsList.delegate = self;
-    _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestions:questionsList];
+    _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
