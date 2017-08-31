@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    QuestionsList *questionsList = [[QuestionsList alloc] init];
+    QuestionsList *questionsList = [[QuestionsList alloc] initWithMockQuestions];
     questionsList.delegate = self;
     _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestions:questionsList];
 }

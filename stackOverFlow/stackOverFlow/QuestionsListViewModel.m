@@ -28,7 +28,6 @@
     }
     
     _questionsList = questionsList;
-    [questionsList fetchQuestionsFromStackOverFlowApi];
     _questions = [questionsList getQuestions];
     return self;
 }
