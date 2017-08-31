@@ -14,7 +14,7 @@
 -(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions;
 @end
 
-@interface QuestionsData : NSObject
+@interface QuestionsList : NSObject
 @property (nonatomic,weak) id <QuestionDataDelegate> delegate;
 -(NSArray *)fetchQuestions;
 -(void)fetchQuestionsFromStackOverFlowApi;
