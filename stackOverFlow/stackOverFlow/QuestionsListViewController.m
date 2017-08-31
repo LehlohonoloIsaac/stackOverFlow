@@ -6,21 +6,21 @@
 //  Copyright © 2017 DVT. All rights reserved.
 //
 
-#import "QuestionsViewController.h"
+#import "QuestionsListViewController.h"
 #import "QuestionCell.h"
 
-@interface QuestionsViewController ()
+@interface QuestionsListViewController ()
 @end
 
-@implementation QuestionsViewController
+@implementation QuestionsListViewController
 
 @synthesize tableView = _tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    QuestionsData *questionData = [[QuestionsData alloc] init];
-    questionData.delegate = self;
-    _questionsViewModel = [[QuestionsViewModel alloc] initWithQuestions:questionData];
+    QuestionsList *questionsList = [[QuestionsList alloc] init];
+    questionsList.delegate = self;
+    _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestions:questionsList];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
