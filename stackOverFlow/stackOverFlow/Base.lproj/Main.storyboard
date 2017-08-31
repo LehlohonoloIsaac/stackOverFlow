@@ -13,7 +13,7 @@
         <!--Questions-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="QuestionsViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuestionsListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -67,7 +67,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Je1-w4-mVF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="3iy-AX-5KH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="3iy-AX-5KH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
