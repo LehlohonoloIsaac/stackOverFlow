@@ -18,9 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    QuestionsList *questionsList = [[QuestionsList alloc] init];
+    QuestionsList *questionsList = [[QuestionsList alloc] initWithQuestions];
     questionsList.delegate = self;
-    _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestions:questionsList];
+    _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

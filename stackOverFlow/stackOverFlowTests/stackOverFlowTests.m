@@ -7,13 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "QuestionsData.h"
-#import "QuestionsViewModel.h"
+#import "QuestionsList.h"
+#import "QuestionsListViewModel.h"
 
 @interface stackOverFlowTests : XCTestCase
 
-@property (nonatomic,strong) QuestionsViewModel *questionsViewModelToTest;
-@property (nonatomic,strong) QuestionsData *mockQuestionsData;
+@property (nonatomic,strong) QuestionsListViewModel *questionsViewModelToTest;
+@property (nonatomic,strong) QuestionsList *mockQuestionsList;
 @property (nonatomic,strong) NSIndexPath *indexPath;
 
 @end
@@ -23,8 +23,8 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    _mockQuestionsData = [[QuestionsData alloc]init];
-    _questionsViewModelToTest = [[QuestionsViewModel alloc]initWithQuestions:_mockQuestionsData];
+    _mockQuestionsList = [[QuestionsList alloc]initWithMockQuestions];
+    _questionsViewModelToTest = [[QuestionsListViewModel alloc]initWithQuestionsList:_mockQuestionsList];
     _indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
 }
 
@@ -41,8 +41,7 @@
 }
 
 -(void)testIfTheCorrectTimeIsReturned{
-    NSDate *time = [[NSDate alloc]init];
-    NSString *expectedResults = [NSString stringWithFormat:@"%@", time];
+    NSString *expectedResults = @"0 hours ago";
     NSString *timePosted = [self.questionsViewModelToTest timeAtIndexPath:_indexPath];
     XCTAssertEqualObjects(expectedResults, timePosted);
 }
