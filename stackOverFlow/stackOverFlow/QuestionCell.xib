@@ -76,17 +76,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BLd-rX-xdu">
-                                        <rect key="frame" x="0.0" y="85" width="320" height="22"/>
+                                        <rect key="frame" x="0.0" y="85" width="44" height="22"/>
+                                        <subviews>
+                                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="iOS" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKJ-Y8-t0r">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="22"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="BLd-rX-xdu" firstAttribute="top" secondItem="udL-WY-J42" secondAttribute="bottom" id="3YG-lV-O3G"/>
-                                    <constraint firstItem="BLd-rX-xdu" firstAttribute="width" secondItem="Rex-2x-Ke3" secondAttribute="width" id="KpU-sG-kaR"/>
+                                    <constraint firstItem="BLd-rX-xdu" firstAttribute="leading" secondItem="Rex-2x-Ke3" secondAttribute="leading" id="HJp-o9-OUE"/>
                                     <constraint firstAttribute="trailing" secondItem="udL-WY-J42" secondAttribute="trailing" id="LgP-9X-Q0n"/>
                                     <constraint firstItem="udL-WY-J42" firstAttribute="height" secondItem="Rex-2x-Ke3" secondAttribute="height" multiplier="0.8" id="WWi-Ww-BLT"/>
-                                    <constraint firstAttribute="trailing" secondItem="BLd-rX-xdu" secondAttribute="trailing" id="YKb-Hx-CBT"/>
-                                    <constraint firstItem="BLd-rX-xdu" firstAttribute="leading" secondItem="Rex-2x-Ke3" secondAttribute="leading" id="rFP-Mi-6ml"/>
                                     <constraint firstAttribute="bottom" secondItem="BLd-rX-xdu" secondAttribute="bottom" id="ux0-cM-gkh"/>
                                     <constraint firstItem="udL-WY-J42" firstAttribute="width" secondItem="Rex-2x-Ke3" secondAttribute="width" id="vio-i1-SSr"/>
                                     <constraint firstItem="udL-WY-J42" firstAttribute="top" secondItem="Rex-2x-Ke3" secondAttribute="top" id="vxe-dP-cJ1"/>

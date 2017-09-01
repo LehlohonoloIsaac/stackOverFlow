@@ -42,7 +42,7 @@
     NSArray *tagsArray = [self.questionsViewModel tagsAtIndexPath:indexPath];
     NSUInteger numberOfTags = [tagsArray count];
     for (NSUInteger i = 0; i<numberOfTags; i++) {
-        UILabel *label = [self createTagWithTagNamed:tagsArray[i]];
+        UITextField *label = [self createTagWithTagNamed:tagsArray[i]];
         [cell.tagsStack addArrangedSubview:label];
     }
     cell.answersHolder.backgroundColor = [self.questionsViewModel setBackgroundColorForAnswerHolderAtIndexPath:indexPath];
@@ -68,10 +68,11 @@
 }
 
 
--(UILabel *)createTagWithTagNamed:(NSString *)tagName{
-    UILabel *label = [[UILabel alloc] init];
+-(UITextField *)createTagWithTagNamed:(NSString *)tagName{
+    UITextField *label = [[UITextField alloc] init];
     [label setText:tagName];
     [label setBackgroundColor:[UIColor.lightGrayColor colorWithAlphaComponent:0.4]];
+    [label setBorderStyle:UITextBorderStyleRoundedRect];
     return label;
 }
 @end
