@@ -6,15 +6,36 @@
 //  Copyright © 2017 DVT. All rights reserved.
 //
 
-#import "QuestionsData.h"
+#import "QuestionsList.h"
 #import "Question.h"
 
-@implementation QuestionsData{
+@implementation QuestionsList{
     NSMutableArray *questions;
 }
 
--(NSArray *)fetchQuestions{
-    return @[
+-(instancetype)initWithQuestions{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    [self fetchQuestionsFromStackOverFlowApi];
+    return self;
+}
+
+-(instancetype)initWithMockQuestions{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    [self fetchMockQuestions];
+    return self;
+}
+
+-(void)fetchMockQuestions
+{
+    questions = [[NSMutableArray alloc]init];
+    NSArray* mockQuestions = [[NSArray alloc]init];
+    mockQuestions =  @[
              [[Question alloc] initWithTitle:@"What is the difference between a struct and a class in Objective-C?" numberOfAnswers:4 tags:@[@"ios",@"objective-c",@"struct",@"class"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
              [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:0 tags:@[@"ios",@"objective-c"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:false],
              [[Question alloc] initWithTitle:@"I have created an NSArray that contains 20 NSString values, How do I append another Array into this one?" numberOfAnswers:50 tags:@[@"ios",@"objective-c",@"NSArray",@"swift",@"programming",@"data types",@"dynamic arrays"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true],
@@ -26,17 +47,23 @@
              [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:4 tags:@[@"ios",@"objective-c"]  timeAgo:[[NSDate alloc]init] isAnswerAccepted:true isQuestionAnswered:true],
              [[Question alloc] initWithTitle:@"What is objective-C" numberOfAnswers:1 tags:@[@"ios",@"objective-c"] timeAgo:[[NSDate alloc]init] isAnswerAccepted:false isQuestionAnswered:true]
              ];
+    for(Question* quest in mockQuestions)
+    {
+        [questions addObject:quest];
+    }
 }
 
--(NSMutableArray *)getQuestions{
+-(NSMutableArray *)fetchQuestions{
     return questions;
 }
 
--(void)fetchQuestionsFromStackOverFlowApi{
+-(void)fetchQuestionsFromStackOverFlowApi
+{
     questions = [[NSMutableArray alloc]init];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"https://api.stackexchange.com/2.2/questions?pagesize=100&order=asc&sort=creation&tagged=ios&site=stackoverflow"]];
-    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response, NSError *error){
+    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response, NSError *error)
+    {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
             [self questionsFromJSON:data error:error];
             [self.delegate didFetchQuestionsFromStackOverFlow:questions];

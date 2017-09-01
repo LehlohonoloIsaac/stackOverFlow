@@ -6,20 +6,20 @@
 //  Copyright © 2017 DVT. All rights reserved.
 //
 
-#import "QuestionsViewModel.h"
+#import "QuestionsListViewModel.h"
 #import "Question.h"
 #import <UIKit/UIKit.h>
 
-@interface QuestionsViewModel()
+@interface QuestionsListViewModel()
 
-@property (nonatomic,strong,readonly) QuestionsData *questionsData;
+@property (nonatomic,strong,readonly) QuestionsList *questionsList;
 @property (nonatomic, strong) NSMutableArray *questions;
 
 @end
 
-@implementation QuestionsViewModel
+@implementation QuestionsListViewModel
 
--(instancetype)initWithQuestions:(QuestionsData *)questionsData{
+-(instancetype)initWithQuestionsList:(QuestionsList *)questionsList{
     
     self = [super init];
     
@@ -27,9 +27,8 @@
         return nil;
     }
     
-    _questionsData = questionsData;
-    [questionsData fetchQuestionsFromStackOverFlowApi];
-    _questions = [questionsData getQuestions];
+    _questionsList = questionsList;
+    _questions = [questionsList fetchQuestions];
     return self;
 }
 

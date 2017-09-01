@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QuestionsViewModel.h"
+#import "QuestionsListViewModel.h"
 
-@interface QuestionsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,QuestionDataDelegate>
+@interface QuestionsListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,QuestionsListDelegate>
 @property (nonatomic,retain) NSMutableArray *questions;
-@property (nonatomic,strong) QuestionsViewModel *questionsViewModel;
+@property (nonatomic,strong) QuestionsListViewModel *questionsViewModel;
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
 @end
 
