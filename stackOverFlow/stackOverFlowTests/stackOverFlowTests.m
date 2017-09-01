@@ -24,7 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     _mockQuestionsList = [[QuestionsList alloc]initWithMockQuestions];
-    _questionsViewModelToTest = [[QuestionsListViewModel alloc]initWithQuestions:_mockQuestionsList];
+    _questionsViewModelToTest = [[QuestionsListViewModel alloc]initWithQuestionsList:_mockQuestionsList];
     _indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
 }
 
