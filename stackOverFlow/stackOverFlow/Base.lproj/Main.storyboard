@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Je1-w4-mVF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Questions View Controller-->
+        <!--Questions-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="QuestionsViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuestionsListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,8 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions tagged &quot;iOS&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VA-xr-z9E">
+                                <rect key="frame" x="32" y="64" width="311" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gul-rq-y3M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QOi-9w-oFP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="gt6-Im-Ewi"/>
@@ -33,13 +44,40 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QOi-9w-oFP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="85r-qe-dAA"/>
+                            <constraint firstItem="6VA-xr-z9E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="8Hb-NG-lrZ"/>
                             <constraint firstItem="QOi-9w-oFP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="JDX-i8-LHt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QOi-9w-oFP" secondAttribute="bottom" id="P1F-19-qgz"/>
-                            <constraint firstItem="QOi-9w-oFP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PpV-mN-3gY"/>
+                            <constraint firstItem="6VA-xr-z9E" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Xyg-Iu-HkW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6VA-xr-z9E" secondAttribute="trailing" constant="16" id="nGR-0V-9af"/>
+                            <constraint firstItem="6VA-xr-z9E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o4Q-II-Bdz"/>
+                            <constraint firstItem="QOi-9w-oFP" firstAttribute="top" secondItem="6VA-xr-z9E" secondAttribute="bottom" id="wvX-2E-2cw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Questions" id="lUf-Qz-MYn"/>
+                    <connections>
+                        <outlet property="tableView" destination="QOi-9w-oFP" id="bZi-cZ-79a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xUu-cf-Jkq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Je1-w4-mVF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="3iy-AX-5KH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mm9-LT-Pww"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Qh-bK-KRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>

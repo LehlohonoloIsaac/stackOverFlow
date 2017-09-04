@@ -7,13 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "QuestionsData.h"
-#import "QuestionsViewModel.h"
+#import "QuestionsList.h"
+#import "QuestionsListViewModel.h"
 
 @interface stackOverFlowTests : XCTestCase
 
-@property (nonatomic,strong) QuestionsViewModel *questionsViewModelToTest;
-@property (nonatomic,strong) QuestionsData *mockQuestionsData;
+@property (nonatomic,strong) QuestionsListViewModel *questionsViewModelToTest;
+@property (nonatomic,strong) QuestionsList *mockQuestionsList;
 @property (nonatomic,strong) NSIndexPath *indexPath;
 
 @end
@@ -23,9 +23,9 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    _mockQuestionsData = [[QuestionsData alloc]init];
-    _questionsViewModelToTest = [[QuestionsViewModel alloc]initWithQuestions:_mockQuestionsData];
-    _indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    _mockQuestionsList = [[QuestionsList alloc]initWithMockQuestions];
+    _questionsViewModelToTest = [[QuestionsListViewModel alloc]initWithQuestionsList:_mockQuestionsList];
+    _indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
 }
 
 -(void)testIfTheCorrectQuestionIsDisplayed{
@@ -35,33 +35,44 @@
 }
 
 -(void)testIfTheCorrectNumberOfQuestionsIsReturned{
-    NSUInteger expectedResult = 11;
+    NSUInteger expectedResult = 10;
     NSUInteger numberOfQuestions = [self.questionsViewModelToTest numberOfQuestions];
     XCTAssertEqual(expectedResult, numberOfQuestions);
 }
 
 -(void)testIfTheCorrectTimeIsReturned{
-    NSString *expectedResult = @"3 years";
+    NSString *expectedResults = @"0 hours ago";
     NSString *timePosted = [self.questionsViewModelToTest timeAtIndexPath:_indexPath];
-    XCTAssertTrue([timePosted isEqualToString:expectedResult]);
+    XCTAssertEqualObjects(expectedResults, timePosted);
 }
 
 -(void)testIfTheCorrectTagsAreReturned{
-    NSString *expectedResult = @"ios objective-C";
-    NSString *tags = [self.questionsViewModelToTest tagsAtIndexPath:_indexPath];
-    XCTAssertTrue([tags isEqualToString:expectedResult]);
+    NSArray *expectedTags = @[@"ios",@"objective-c"];
+    NSArray *tags = [self.questionsViewModelToTest tagsAtIndexPath:_indexPath];
+    XCTAssertEqualObjects(expectedTags, tags);
   
 }
 
+-(void)testIfCorrectAnswerLabelIsSet{
+    NSString *expectedResult = @"Answers";
+    NSString *answerLabel = [self.questionsViewModelToTest setAnswerLabelAtIndexPath:_indexPath];
+    XCTAssertTrue([answerLabel isEqualToString:expectedResult]);
+}
+
 -(void)testIfCorrectNumberOfAnswersAreReturned{
-    NSUInteger expectedResult = 4;
+    NSUInteger expectedResult = 0;
     NSUInteger numberofAnswers = [self.questionsViewModelToTest numberOfAnswersAtIndexPath:_indexPath];
     XCTAssertEqual(expectedResult, numberofAnswers);
 }
 
+-(void)testIfCorrectColorForAnswerHolderIsReturned{
+    UIColor *expectedColor = [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
+    UIColor *color = [self.questionsViewModelToTest setBackgroundColorForAnswerHolderAtIndexPath:_indexPath];
+    XCTAssertEqualObjects(expectedColor, color);
+}
 
 -(void)testIfisAnswerCorrectMethodWorksCorrectly{
-    Boolean expectedResult = true;
+    Boolean expectedResult = false;
     Boolean result = [self.questionsViewModelToTest isAnswerAccepted:_indexPath];
     XCTAssertTrue(expectedResult == result);
 }

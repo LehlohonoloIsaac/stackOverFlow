@@ -7,19 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "QuestionsData.h"
+#import <UIKit/UIKit.h>
+#import "QuestionsList.h"
 #import "Question.h"
 
-@interface QuestionsViewModel : NSObject
+@interface QuestionsListViewModel : NSObject
 
--(instancetype)initWithQuestions:(QuestionsData *)questionsData;
+-(instancetype)initWithQuestionsList:(QuestionsList *)questionsList;
 
 -(NSUInteger)numberOfQuestions;
 -(Question *)questionAtIndexPath:(NSIndexPath *)indexPath;
--(NSString *)tagsAtIndexPath:(NSIndexPath *)indexPath;
+-(NSArray *)tagsAtIndexPath:(NSIndexPath *)indexPath;
 -(NSString *)timeAtIndexPath:(NSIndexPath *)indexPath;
 -(NSUInteger)numberOfAnswersAtIndexPath:(NSIndexPath *)indexPath;
 -(NSString *)displayQuestionAtIndexPath:(NSIndexPath *)indexPath;
 -(Boolean)isAnswerAccepted:(NSIndexPath *)indexPath;
+-(NSString *)setAnswerLabelAtIndexPath:(NSIndexPath *)indexPath;
+-(UIColor *)setBackgroundColorForAnswerHolderAtIndexPath:(NSIndexPath *)indexPath;
+-(NSDate *)getCurrentTime;
+-(NSDate *)getTimeAtIndexPath:(NSIndexPath *)indexPath;
+-(BOOL)questionHasAcceptedAnswerAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
