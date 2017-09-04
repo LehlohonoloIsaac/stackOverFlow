@@ -71,9 +71,8 @@
     XCTAssertEqualObjects(expectedColor, color);
 }
 
-
 -(void)testIfisAnswerCorrectMethodWorksCorrectly{
-    Boolean expectedResult = true;
+    Boolean expectedResult = false;
     Boolean result = [self.questionsViewModelToTest isAnswerAccepted:_indexPath];
     XCTAssertTrue(expectedResult == result);
 }
