@@ -48,9 +48,8 @@
 
 -(void)testIfTheCorrectTagsAreReturned{
     NSArray *expectedTags = @[@"ios",@"objective-c"];
-    NSString *expectedResults = [expectedTags componentsJoinedByString:@"   "];
-    NSString *tags = [self.questionsViewModelToTest tagsAtIndexPath:_indexPath];
-    XCTAssertTrue([tags isEqualToString:expectedResults]);
+    NSArray *tags = [self.questionsViewModelToTest tagsAtIndexPath:_indexPath];
+    XCTAssertEqualObjects(expectedTags, tags);
   
 }
 
