@@ -72,6 +72,12 @@
 }
 
 
+-(void)testIfisAnswerCorrectMethodWorksCorrectly{
+    Boolean expectedResult = true;
+    Boolean result = [self.questionsViewModelToTest isAnswerAccepted:_indexPath];
+    XCTAssertTrue(expectedResult == result);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
