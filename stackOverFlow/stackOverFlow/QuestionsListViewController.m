@@ -21,6 +21,8 @@
     QuestionsList *questionsList = [[QuestionsList alloc] initWithQuestions];
     questionsList.delegate = self;
     _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
+    UINib *questionCell = [UINib nibWithNibName:@"QuestionCell" bundle:nil];
+    [_tableView registerNib:questionCell forCellReuseIdentifier:@"QuestionCell"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -39,14 +41,9 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *tableIdentifier = @"QuestionCell";
-    QuestionCell *cell = (QuestionCell *)[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"QuestionCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    
-    NSUInteger numberOfAnswers = (unsigned long) [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
+    static NSString *cellIdentifier = @"QuestionCell";
+    QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    NSUInteger numberOfAnswers = [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
     
     NSArray *tagsArray = [self.questionsViewModel tagsAtIndexPath:indexPath];
     NSUInteger numberOfTags = [tagsArray count];
