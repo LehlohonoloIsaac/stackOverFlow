@@ -46,9 +46,8 @@
     NSUInteger numberOfAnswers = [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
     
     NSArray *tagsArray = [self.questionsViewModel tagsAtIndexPath:indexPath];
-    NSUInteger numberOfTags = [tagsArray count];
-    for (NSUInteger i = 0; i<numberOfTags; i++) {
-        UITextField *label = [self createTagWithTagNamed:tagsArray[i]];
+    for (NSString* tag in tagsArray){
+        UITextField *label = [self createTagWithTagNamed:tag];
         [cell.tagsStack addArrangedSubview:label];
     }
     cell.answersHolder.backgroundColor = [self.questionsViewModel setBackgroundColorForAnswerHolderAtIndexPath:indexPath];
@@ -80,6 +79,7 @@
     [label setText:tagName];
     [label setBackgroundColor:[UIColor.lightGrayColor colorWithAlphaComponent:0.4]];
     [label setBorderStyle:UITextBorderStyleRoundedRect];
+    [label setUserInteractionEnabled:false];
     return label;
 }
 @end
