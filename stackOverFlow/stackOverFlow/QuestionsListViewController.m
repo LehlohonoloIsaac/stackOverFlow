@@ -23,6 +23,15 @@
     _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    UIActivityIndicatorView *loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    loader.tag = 1;
+    loader.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    [self.view addSubview:loader];
+    [loader startAnimating];
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.questionsViewModel numberOfQuestions];
@@ -63,6 +72,7 @@
 
 -(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions{
     _questions = questions;
+    [[self.view viewWithTag:1] stopAnimating];
     [_tableView reloadData];
     NSLog(@"Finished fetching questions...");
 }
