@@ -43,20 +43,8 @@
 {
     static NSString *cellIdentifier = @"QuestionCell";
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    NSUInteger numberOfAnswers = [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
-    
-    NSArray *tagsArray = [self.questionsViewModel tagsAtIndexPath:indexPath];
-    for (NSString* tag in tagsArray){
-        UITextField *label = [self createTagWithTagNamed:tag];
-        [cell.tagsStack addArrangedSubview:label];
-    }
-    cell.answersHolder.backgroundColor = [self.questionsViewModel setBackgroundColorForAnswerHolderAtIndexPath:indexPath];
-    cell.answerLabel.text = [self.questionsViewModel setAnswerLabelAtIndexPath:indexPath];
-    cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
-    cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",numberOfAnswers];
-    cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];
-    cell.answersHolder.layer.cornerRadius = cell.answersHolder.frame.size.width/2;
-    cell.answersHolder.layer.masksToBounds = true;
+    Question* question = [_questionsViewModel questionAtIndexPath:indexPath];
+    [cell updateCellWithQuestion:question];
     return cell;
 }
 
@@ -74,12 +62,5 @@
 }
 
 
--(UITextField *)createTagWithTagNamed:(NSString *)tagName{
-    UITextField *label = [[UITextField alloc] init];
-    [label setText:tagName];
-    [label setBackgroundColor:[UIColor.lightGrayColor colorWithAlphaComponent:0.4]];
-    [label setBorderStyle:UITextBorderStyleRoundedRect];
-    [label setUserInteractionEnabled:false];
-    return label;
-}
+
 @end
