@@ -15,6 +15,7 @@
 @implementation QuestionsListViewController
 
 @synthesize tableView = _tableView;
+@synthesize searchController = _searchController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +24,10 @@
     _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
     UINib *questionCell = [UINib nibWithNibName:@"QuestionCell" bundle:nil];
     [_tableView registerNib:questionCell forCellReuseIdentifier:@"QuestionCell"];
+    _searchResults = [[NSMutableArray alloc]init];
+    _searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+    _searchController.definesPresentationContext = NO;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -32,18 +37,38 @@
     loader.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     [self.view addSubview:loader];
     [loader startAnimating];
+    
+    _searchController.searchResultsUpdater = self;
+    _searchController.searchBar.delegate = self;
+    _tableView.tableHeaderView = _searchController.searchBar;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.questionsViewModel numberOfQuestions];
+    if (_searchResults.count != 0) {
+        return _searchResults.count;
+    }else{
+        if (!_searchController.isActive) {
+             return [self.questionsViewModel numberOfQuestions];
+        }
+    }
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"QuestionCell";
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    Question* question = [_questionsViewModel questionAtIndexPath:indexPath];
+    Question* question;
+    if (_searchResults.count!=0) {
+        question = _searchResults[indexPath.row];
+    }else{
+        if (!_searchController.isActive) {
+            question = [_questionsViewModel questionAtIndexPath:indexPath];
+        }else{
+            question = nil;
+        }
+    }
     [cell configureCellWithQuestion:question];
     return cell;
 }
@@ -61,6 +86,16 @@
     NSLog(@"Finished fetching questions...");
 }
 
-
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    [_searchResults removeAllObjects];
+    NSString* searchText = searchController.searchBar.text;
+    for (Question* question in _questions) {
+        if ([question.title containsString:searchText]) {
+            [_searchResults addObject:question];
+        }
+    }
+    [_tableView reloadData];
+    
+}
 
 @end

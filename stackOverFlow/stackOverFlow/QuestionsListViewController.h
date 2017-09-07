@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "QuestionsListViewModel.h"
 
-@interface QuestionsListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,QuestionsListDelegate>
+@interface QuestionsListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,QuestionsListDelegate,UISearchResultsUpdating,UISearchBarDelegate>
 @property (nonatomic,retain) NSMutableArray *questions;
 @property (nonatomic,strong) QuestionsListViewModel *questionsViewModel;
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) UISearchController* searchController;
+@property (nonatomic,strong) NSMutableArray* searchResults;
 @end
 
