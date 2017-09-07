@@ -44,7 +44,7 @@
     static NSString *cellIdentifier = @"QuestionCell";
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     Question* question = [_questionsViewModel questionAtIndexPath:indexPath];
-    [cell updateCellWithQuestion:question];
+    [cell configureCellWithQuestion:question];
     return cell;
 }
 

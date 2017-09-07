@@ -30,7 +30,7 @@
     [super setSelected:selected animated:animated];
 }
 
--(void)updateCellWithQuestion:(Question*)question{
+-(void)configureCellWithQuestion:(Question*)question{
     self.questionViewModel = [[QuestionViewModel alloc]initWithQuestion:question];
      self.answerLabel.text = _questionViewModel.answerLabel;
     self.numberOfAnswers.text = [NSString stringWithFormat:@"%lu",(unsigned long)_questionViewModel.answerCount];

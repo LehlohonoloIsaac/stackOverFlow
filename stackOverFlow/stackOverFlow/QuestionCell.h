@@ -10,7 +10,7 @@
 #import "QuestionViewModel.h"
 
 @interface QuestionCell : UITableViewCell
-    -(void)updateCellWithQuestion:(Question*)question;
+    -(void)configureCellWithQuestion:(Question*)question;
     @property (nonatomic,strong) QuestionViewModel* questionViewModel;
     @property (nonatomic, weak) IBOutlet UILabel *numberOfAnswers;
     @property (nonatomic, weak) IBOutlet UILabel *question;
