@@ -9,12 +9,18 @@
 #import "QuestionsListViewController.h"
 #import "QuestionCell.h"
 
-@interface QuestionsListViewController ()
+@interface QuestionsListViewController ()<UITableViewDelegate,UITableViewDataSource,QuestionsListDelegate,UISearchResultsUpdating,UISearchBarDelegate>
+@property (nonatomic,retain) NSMutableArray *questions;
+@property (nonatomic,strong) QuestionsListViewModel *questionsViewModel;
+@property (nonatomic,weak) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) UISearchController* searchController;
+@property (nonatomic,strong) NSMutableArray* searchResults;
 @end
 
 @implementation QuestionsListViewController
 
 @synthesize tableView = _tableView;
+@synthesize searchController = _searchController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +29,10 @@
     _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
     UINib *questionCell = [UINib nibWithNibName:@"QuestionCell" bundle:nil];
     [_tableView registerNib:questionCell forCellReuseIdentifier:@"QuestionCell"];
+    _searchResults = [[NSMutableArray alloc]init];
+    _searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+    _searchController.definesPresentationContext = NO;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -32,31 +42,39 @@
     loader.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     [self.view addSubview:loader];
     [loader startAnimating];
+    
+    _searchController.searchResultsUpdater = self;
+    _searchController.searchBar.delegate = self;
+    _tableView.tableHeaderView = _searchController.searchBar;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.questionsViewModel numberOfQuestions];
+    if (_searchResults.count != 0) {
+        return _searchResults.count;
+    }else{
+        if (!_searchController.isActive) {
+             return [self.questionsViewModel numberOfQuestions];
+        }
+    }
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"QuestionCell";
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    NSUInteger numberOfAnswers = [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
-    
-    NSArray *tagsArray = [self.questionsViewModel tagsAtIndexPath:indexPath];
-    for (NSString* tag in tagsArray){
-        UITextField *label = [self createTagWithTagNamed:tag];
-        [cell.tagsStack addArrangedSubview:label];
+    Question* question;
+    if (_searchResults.count!=0) {
+        question = _searchResults[indexPath.row];
+    }else{
+        if (!_searchController.isActive) {
+            question = [_questionsViewModel questionAtIndexPath:indexPath];
+        }else{
+            question = nil;
+        }
     }
-    cell.answersHolder.backgroundColor = [self.questionsViewModel setBackgroundColorForAnswerHolderAtIndexPath:indexPath];
-    cell.answerLabel.text = [self.questionsViewModel setAnswerLabelAtIndexPath:indexPath];
-    cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
-    cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",numberOfAnswers];
-    cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];
-    cell.answersHolder.layer.cornerRadius = cell.answersHolder.frame.size.width/2;
-    cell.answersHolder.layer.masksToBounds = true;
+    [cell configureCellWithQuestion:question];
     return cell;
 }
 
@@ -73,13 +91,16 @@
     NSLog(@"Finished fetching questions...");
 }
 
-
--(UITextField *)createTagWithTagNamed:(NSString *)tagName{
-    UITextField *label = [[UITextField alloc] init];
-    [label setText:tagName];
-    [label setBackgroundColor:[UIColor.lightGrayColor colorWithAlphaComponent:0.4]];
-    [label setBorderStyle:UITextBorderStyleRoundedRect];
-    [label setUserInteractionEnabled:false];
-    return label;
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    [_searchResults removeAllObjects];
+    NSString* searchText = searchController.searchBar.text;
+    for (Question* question in _questions) {
+        if ([question.title containsString:searchText]) {
+            [_searchResults addObject:question];
+        }
+    }
+    [_tableView reloadData];
+    
 }
+
 @end

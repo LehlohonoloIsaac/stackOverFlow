@@ -20,6 +20,7 @@
 		EDC8FCB41F458BDA00266A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC8FCB31F458BDA00266A50 /* Assets.xcassets */; };
 		EDC8FCB71F458BDA00266A50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC8FCB51F458BDA00266A50 /* LaunchScreen.storyboard */; };
 		EDC8FCC21F458BDA00266A50 /* stackOverFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCC11F458BDA00266A50 /* stackOverFlowTests.m */; };
+		EDDE5BE21F6152EF007D997E /* QuestionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDE5BE11F6152EF007D997E /* QuestionViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		EDC8FCBD1F458BDA00266A50 /* stackOverFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stackOverFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC8FCC11F458BDA00266A50 /* stackOverFlowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = stackOverFlowTests.m; sourceTree = "<group>"; };
 		EDC8FCC31F458BDA00266A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDDE5BE01F6152EF007D997E /* QuestionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewModel.h; sourceTree = "<group>"; };
+		EDDE5BE11F6152EF007D997E /* QuestionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 			children = (
 				ED4534BC1F4713F8008E5C14 /* QuestionsListViewModel.h */,
 				ED4534BD1F4713F8008E5C14 /* QuestionsListViewModel.m */,
+				EDDE5BE01F6152EF007D997E /* QuestionViewModel.h */,
+				EDDE5BE11F6152EF007D997E /* QuestionViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			files = (
 				EDC8FCAF1F458BDA00266A50 /* QuestionsListViewController.m in Sources */,
 				ED8E0D1D1F45D6A1006BA37C /* QuestionCell.m in Sources */,
+				EDDE5BE21F6152EF007D997E /* QuestionViewModel.m in Sources */,
 				ED4534BE1F4713F8008E5C14 /* QuestionsListViewModel.m in Sources */,
 				ED4534B81F470624008E5C14 /* Question.m in Sources */,
 				EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */,
