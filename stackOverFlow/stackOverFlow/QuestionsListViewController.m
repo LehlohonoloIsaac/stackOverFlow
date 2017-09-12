@@ -26,13 +26,13 @@
     [super viewDidLoad];
     QuestionsList *questionsList = [[QuestionsList alloc] initWithQuestions];
     questionsList.delegate = self;
-    _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
+    self.questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
     UINib *questionCell = [UINib nibWithNibName:@"QuestionCell" bundle:nil];
     [_tableView registerNib:questionCell forCellReuseIdentifier:@"QuestionCell"];
-    _searchResults = [[NSMutableArray alloc]init];
-    _searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
-    _searchController.definesPresentationContext = true;
-    _searchController.dimsBackgroundDuringPresentation = false;
+    self.searchResults = [[NSMutableArray alloc]init];
+    self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+    self.searchController.definesPresentationContext = true;
+    self.searchController.dimsBackgroundDuringPresentation = false;
     
 }
 
@@ -44,17 +44,17 @@
     [self.view addSubview:loader];
     [loader startAnimating];
     
-    _searchController.searchResultsUpdater = self;
-    _searchController.searchBar.delegate = self;
-    _tableView.tableHeaderView = _searchController.searchBar;
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.delegate = self;
+    self.tableView.tableHeaderView = self.searchController.searchBar;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_searchResults.count != 0) {
-        return _searchResults.count;
+    if (self.searchResults.count != 0) {
+        return self.searchResults.count;
     }else{
-        if (!_searchController.isActive) {
+        if (!self.searchController.isActive) {
              return [self.questionsViewModel numberOfQuestions];
         }
     }
@@ -66,11 +66,11 @@
     static NSString *cellIdentifier = @"QuestionCell";
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     Question* question;
-    if (_searchResults.count!=0) {
-        question = _searchResults[indexPath.row];
+    if (self.searchResults.count!=0) {
+        question = self.searchResults[indexPath.row];
     }else{
-        if (!_searchController.isActive) {
-            question = [_questionsViewModel questionAtIndexPath:indexPath];
+        if (!self.searchController.isActive) {
+            question = [self.questionsViewModel questionAtIndexPath:indexPath];
         }else{
             question = nil;
         }
@@ -86,21 +86,21 @@
 }
 
 -(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions{
-    _questions = questions;
+    self.questions = questions;
     [[self.view viewWithTag:1] stopAnimating];
-    [_tableView reloadData];
+    [self.tableView reloadData];
     NSLog(@"Finished fetching questions...");
 }
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController{
-    [_searchResults removeAllObjects];
+    [self.searchResults removeAllObjects];
     NSString* searchText = searchController.searchBar.text;
-    for (Question* question in _questions) {
+    for (Question* question in self.questions) {
         if ([question.title containsString:searchText]) {
-            [_searchResults addObject:question];
+            [self.searchResults addObject:question];
         }
     }
-    [_tableView reloadData];
+    [self.tableView reloadData];
     
 }
 
