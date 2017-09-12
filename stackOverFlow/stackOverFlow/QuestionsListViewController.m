@@ -31,7 +31,8 @@
     [_tableView registerNib:questionCell forCellReuseIdentifier:@"QuestionCell"];
     _searchResults = [[NSMutableArray alloc]init];
     _searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
-    _searchController.definesPresentationContext = NO;
+    _searchController.definesPresentationContext = true;
+    _searchController.dimsBackgroundDuringPresentation = false;
     
 }
 
