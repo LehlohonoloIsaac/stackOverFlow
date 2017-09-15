@@ -9,20 +9,31 @@
 #import "QuestionsListViewController.h"
 #import "QuestionCell.h"
 
-@interface QuestionsListViewController ()
+@interface QuestionsListViewController ()<UITableViewDelegate,UITableViewDataSource,QuestionsListDelegate,UISearchResultsUpdating,UISearchBarDelegate>
+@property (nonatomic,retain) NSMutableArray *questions;
+@property (nonatomic,strong) QuestionsListViewModel *questionsViewModel;
+@property (nonatomic,weak) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) UISearchController* searchController;
+@property (nonatomic,strong) NSMutableArray* searchResults;
 @end
 
 @implementation QuestionsListViewController
 
 @synthesize tableView = _tableView;
+@synthesize searchController = _searchController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     QuestionsList *questionsList = [[QuestionsList alloc] initWithQuestions];
     questionsList.delegate = self;
-    _questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
+    self.questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
     UINib *questionCell = [UINib nibWithNibName:@"QuestionCell" bundle:nil];
     [_tableView registerNib:questionCell forCellReuseIdentifier:@"QuestionCell"];
+    self.searchResults = [[NSMutableArray alloc]init];
+    self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+    self.searchController.definesPresentationContext = true;
+    self.searchController.dimsBackgroundDuringPresentation = false;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -32,31 +43,39 @@
     loader.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     [self.view addSubview:loader];
     [loader startAnimating];
+    
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.delegate = self;
+    self.tableView.tableHeaderView = self.searchController.searchBar;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.questionsViewModel numberOfQuestions];
+    if (self.searchResults.count != 0) {
+        return self.searchResults.count;
+    }else{
+        if (!self.searchController.isActive) {
+             return [self.questionsViewModel numberOfQuestions];
+        }
+    }
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"QuestionCell";
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    NSUInteger numberOfAnswers = [self.questionsViewModel numberOfAnswersAtIndexPath:indexPath];
-    
-    NSArray *tagsArray = [self.questionsViewModel tagsAtIndexPath:indexPath];
-    for (NSString* tag in tagsArray){
-        UITextField *label = [self createTagWithTagNamed:tag];
-        [cell.tagsStack addArrangedSubview:label];
+    Question* question;
+    if (self.searchResults.count!=0) {
+        question = self.searchResults[indexPath.row];
+    }else{
+        if (!self.searchController.isActive) {
+            question = [self.questionsViewModel questionAtIndexPath:indexPath];
+        }else{
+            question = nil;
+        }
     }
-    cell.answersHolder.backgroundColor = [self.questionsViewModel setBackgroundColorForAnswerHolderAtIndexPath:indexPath];
-    cell.answerLabel.text = [self.questionsViewModel setAnswerLabelAtIndexPath:indexPath];
-    cell.question.text = [self.questionsViewModel displayQuestionAtIndexPath:indexPath];
-    cell.numberOfAnswers.text = [NSString stringWithFormat:@"%ld",numberOfAnswers];
-    cell.numberOfHoursAgo.text = [self.questionsViewModel timeAtIndexPath:indexPath];
-    cell.answersHolder.layer.cornerRadius = cell.answersHolder.frame.size.width/2;
-    cell.answersHolder.layer.masksToBounds = true;
+    [cell configureCellWithQuestion:question];
     return cell;
 }
 
@@ -67,19 +86,22 @@
 }
 
 -(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions{
-    _questions = questions;
+    self.questions = questions;
     [[self.view viewWithTag:1] stopAnimating];
-    [_tableView reloadData];
+    [self.tableView reloadData];
     NSLog(@"Finished fetching questions...");
 }
 
-
--(UITextField *)createTagWithTagNamed:(NSString *)tagName{
-    UITextField *label = [[UITextField alloc] init];
-    [label setText:tagName];
-    [label setBackgroundColor:[UIColor.lightGrayColor colorWithAlphaComponent:0.4]];
-    [label setBorderStyle:UITextBorderStyleRoundedRect];
-    [label setUserInteractionEnabled:false];
-    return label;
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    [self.searchResults removeAllObjects];
+    NSString* searchText = searchController.searchBar.text;
+    for (Question* question in self.questions) {
+        if ([question.title containsString:searchText]) {
+            [self.searchResults addObject:question];
+        }
+    }
+    [self.tableView reloadData];
+    
 }
+
 @end
