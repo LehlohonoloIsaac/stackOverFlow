@@ -22,7 +22,8 @@
 @synthesize tableView = _tableView;
 @synthesize searchController = _searchController;
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     QuestionsList *questionsList = [[QuestionsList alloc] initWithQuestions];
     questionsList.delegate = self;
@@ -33,17 +34,16 @@
     self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
     self.searchController.definesPresentationContext = true;
     self.searchController.dimsBackgroundDuringPresentation = false;
-    
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     UIActivityIndicatorView *loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     loader.tag = 1;
     loader.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     [self.view addSubview:loader];
     [loader startAnimating];
-    
     self.searchController.searchResultsUpdater = self;
     self.searchController.searchBar.delegate = self;
     self.tableView.tableHeaderView = self.searchController.searchBar;
@@ -51,10 +51,13 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.searchResults.count != 0) {
+    if (self.searchResults.count != 0)
+    {
         return self.searchResults.count;
-    }else{
-        if (!self.searchController.isActive) {
+    }else
+    {
+        if (!self.searchController.isActive)
+        {
              return [self.questionsViewModel numberOfQuestions];
         }
     }
@@ -66,12 +69,16 @@
     static NSString *cellIdentifier = @"QuestionCell";
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     Question* question;
-    if (self.searchResults.count!=0) {
+    if (self.searchResults.count!=0)
+    {
         question = self.searchResults[indexPath.row];
-    }else{
-        if (!self.searchController.isActive) {
+    }else
+    {
+        if (!self.searchController.isActive)
+        {
             question = [self.questionsViewModel questionAtIndexPath:indexPath];
-        }else{
+        }else
+        {
             question = nil;
         }
     }
@@ -85,23 +92,26 @@
     return 150;
 }
 
--(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions{
+-(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions
+{
     self.questions = questions;
     [[self.view viewWithTag:1] stopAnimating];
     [self.tableView reloadData];
     NSLog(@"Finished fetching questions...");
 }
 
--(void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
     [self.searchResults removeAllObjects];
     NSString* searchText = searchController.searchBar.text;
-    for (Question* question in self.questions) {
-        if ([question.title containsString:searchText]) {
+    for (Question* question in self.questions)
+    {
+        if ([question.title containsString:searchText])
+        {
             [self.searchResults addObject:question];
         }
     }
     [self.tableView reloadData];
-    
 }
 
 @end

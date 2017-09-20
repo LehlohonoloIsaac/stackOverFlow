@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol QuestionsListDelegate <NSObject>
-
 @required
 -(void)didFetchQuestionsFromStackOverFlow:(NSMutableArray *)questions;
 @end
