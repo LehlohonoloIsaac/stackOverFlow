@@ -12,7 +12,6 @@
 
 @implementation QuestionCell
 
-
 @synthesize numberOfAnswers = _numberOfAnswers;
 @synthesize question = _question;
 @synthesize numberOfHoursAgo = _numberOfHoursAgo;
@@ -20,23 +19,27 @@
 @synthesize answerLabel = _answerLabel;
 @synthesize tagsStack = _tagsStack;
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     _answerLabel.text =@"Answers";
     _answersHolder.backgroundColor = [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 }
 
--(void)configureCellWithQuestion:(Question*)question{
+-(void)configureCellWithQuestion:(Question*)question
+{
     self.questionViewModel = [[QuestionViewModel alloc]initWithQuestion:question];
-     self.answerLabel.text = _questionViewModel.answerLabel;
+    self.answerLabel.text = _questionViewModel.answerLabel;
     self.numberOfAnswers.text = [NSString stringWithFormat:@"%lu",(unsigned long)_questionViewModel.answerCount];
     self.question.text = _questionViewModel.displayQuestionTitle;
     self.numberOfHoursAgo.text = _questionViewModel.timeElapsed;
-    for (NSString* tag in _questionViewModel.tags){
+    for (NSString* tag in _questionViewModel.tags)
+    {
         UITextField *label = [self createTagWithTagNamed:tag];
         [self.tagsStack addArrangedSubview:label];
     }
@@ -45,7 +48,8 @@
     self.answersHolder.layer.masksToBounds = true;
 }
 
--(UITextField *)createTagWithTagNamed:(NSString *)tagName{
+-(UITextField *)createTagWithTagNamed:(NSString *)tagName
+{
     UITextField *label = [[UITextField alloc] init];
     [label setText:tagName];
     [label setBackgroundColor:[UIColor.lightGrayColor colorWithAlphaComponent:0.4]];

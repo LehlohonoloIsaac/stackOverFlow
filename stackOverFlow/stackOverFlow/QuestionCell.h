@@ -18,5 +18,4 @@
     @property (nonatomic,weak) IBOutlet UIView *answersHolder;
     @property (nonatomic, weak) IBOutlet UILabel *answerLabel;
     @property (nonatomic,weak) IBOutlet UIStackView *tagsStack;
-
 @end

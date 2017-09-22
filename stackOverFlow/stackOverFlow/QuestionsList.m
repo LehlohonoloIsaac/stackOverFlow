@@ -9,22 +9,27 @@
 #import "QuestionsList.h"
 #import "Question.h"
 
-@implementation QuestionsList{
+@implementation QuestionsList
+{
     NSMutableArray *questions;
 }
 
--(instancetype)initWithQuestions{
+-(instancetype)initWithQuestions
+{
     self = [super init];
-    if (!self) {
+    if (!self)
+    {
         return nil;
     }
     [self fetchQuestionsFromStackOverFlowApi];
     return self;
 }
 
--(instancetype)initWithMockQuestions{
+-(instancetype)initWithMockQuestions
+{
     self = [super init];
-    if (!self) {
+    if (!self)
+    {
         return nil;
     }
     [self fetchMockQuestions];
@@ -53,7 +58,8 @@
     }
 }
 
--(NSMutableArray *)fetchQuestions{
+-(NSMutableArray *)fetchQuestions
+{
     return questions;
 }
 
@@ -73,7 +79,8 @@
 }
 
 
--(NSURLSession *)getURLSession{
+-(NSURLSession *)getURLSession
+{
     static NSURLSession *session = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -84,27 +91,33 @@
 }
 
 
--(void)questionsFromJSON:(NSData *)objectNotation error:(NSError *)error{
+-(void)questionsFromJSON:(NSData *)objectNotation error:(NSError *)error
+{
     NSError *localError = nil;
     NSDictionary *parsedobject = [NSJSONSerialization JSONObjectWithData:objectNotation options:0 error:&localError];
     
     NSLog(@"%@", parsedobject);
-    if (localError != nil) {
+    if (localError != nil)
+    {
         error = localError;
-    }else{
-    NSArray *items = [parsedobject valueForKey:@"items"];
+    }else
+    {
+        NSArray *items = [parsedobject valueForKey:@"items"];
     
-    for (NSDictionary *questionDict in items) {
-        Question *question = [[Question alloc] init];
+        for (NSDictionary *questionDict in items)
+        {
+            Question *question = [[Question alloc] init];
         
-        for (NSString *key in questionDict) {
-            if ([question respondsToSelector:NSSelectorFromString(key)]) {
-                [question setValue:[questionDict valueForKey:key] forKey:key];
+            for (NSString *key in questionDict)
+            {
+                if ([question respondsToSelector:NSSelectorFromString(key)])
+                {
+                    [question setValue:[questionDict valueForKey:key] forKey:key];
+                }
             }
+            [questions addObject:question];
+            NSLog(@"%@", @"Adding question objects");
         }
-        [questions addObject:question];
-        NSLog(@"%@", @"Adding question objects");
-    }
     }
 }
 
