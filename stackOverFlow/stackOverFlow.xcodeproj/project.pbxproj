@@ -112,13 +112,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		ED4534C61F472282008E5C14 /* List */ = {
+		ED4534C61F472282008E5C14 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				ED4534C01F471869008E5C14 /* QuestionsList.h */,
 				ED4534C11F471869008E5C14 /* QuestionsList.m */,
 			);
-			name = List;
+			name = Repository;
 			sourceTree = "<group>";
 		};
 		ED9531251F6C58D4002C94DA /* ui */ = {
@@ -163,7 +163,7 @@
 		EDC8FCA61F458BD900266A50 /* stackOverFlow */ = {
 			isa = PBXGroup;
 			children = (
-				ED4534C61F472282008E5C14 /* List */,
+				ED4534C61F472282008E5C14 /* Repository */,
 				ED4534C31F472231008E5C14 /* Model */,
 				ED4534C51F47226D008E5C14 /* View */,
 				ED4534C41F472251008E5C14 /* ViewModel */,
