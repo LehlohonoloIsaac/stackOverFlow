@@ -16,6 +16,6 @@
 -(instancetype)initWithQuestionsList:(QuestionsList *)questionsList;
 
 -(NSUInteger)numberOfQuestions;
--(Question *)questionAtIndexPath:(NSIndexPath *)indexPath;
+-(Question *)questionAtPosition:(NSInteger) position;
 
 @end

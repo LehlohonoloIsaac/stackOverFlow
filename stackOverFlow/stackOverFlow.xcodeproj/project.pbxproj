@@ -13,6 +13,7 @@
 		ED4534C21F471869008E5C14 /* QuestionsList.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534C11F471869008E5C14 /* QuestionsList.m */; };
 		ED8E0D1D1F45D6A1006BA37C /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */; };
 		ED9A792A1F45CB0600ACB76C /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9A79291F45CB0600ACB76C /* QuestionCell.xib */; };
+		EDC566D01F98A2F0002197EC /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC566CF1F98A2F0002197EC /* RoundedView.m */; };
 		EDC8FCA91F458BDA00266A50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCA81F458BDA00266A50 /* main.m */; };
 		EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCAB1F458BDA00266A50 /* AppDelegate.m */; };
 		EDC8FCAF1F458BDA00266A50 /* QuestionsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8FCAE1F458BDA00266A50 /* QuestionsListViewController.m */; };
@@ -43,6 +44,8 @@
 		ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		ED9A79291F45CB0600ACB76C /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		EDC566CE1F98A2F0002197EC /* RoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
+		EDC566CF1F98A2F0002197EC /* RoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
 		EDC8FCA41F458BD900266A50 /* stackOverFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stackOverFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC8FCA81F458BDA00266A50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDC8FCAA1F458BDA00266A50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		ED4534C51F47226D008E5C14 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EDC566CA1F98A280002197EC /* Custom Views */,
 				EDC8FCAD1F458BDA00266A50 /* QuestionsListViewController.h */,
 				EDC8FCAE1F458BDA00266A50 /* QuestionsListViewController.m */,
 			);
@@ -120,11 +124,20 @@
 			isa = PBXGroup;
 			children = (
 				ED9A79291F45CB0600ACB76C /* QuestionCell.xib */,
-				ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */,
-				ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */,
 				EDC8FCB01F458BDA00266A50 /* Main.storyboard */,
 			);
 			name = ui;
+			sourceTree = "<group>";
+		};
+		EDC566CA1F98A280002197EC /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */,
+				ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */,
+				EDC566CE1F98A2F0002197EC /* RoundedView.h */,
+				EDC566CF1F98A2F0002197EC /* RoundedView.m */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 		EDC8FC9B1F458BD900266A50 = {
@@ -229,6 +242,7 @@
 				TargetAttributes = {
 					EDC8FCA31F458BD900266A50 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					EDC8FCBC1F458BDA00266A50 = {
@@ -287,6 +301,7 @@
 				ED8E0D1D1F45D6A1006BA37C /* QuestionCell.m in Sources */,
 				EDDE5BE21F6152EF007D997E /* QuestionViewModel.m in Sources */,
 				ED4534BE1F4713F8008E5C14 /* QuestionsListViewModel.m in Sources */,
+				EDC566D01F98A2F0002197EC /* RoundedView.m in Sources */,
 				ED4534B81F470624008E5C14 /* Question.m in Sources */,
 				EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */,
 				ED4534C21F471869008E5C14 /* QuestionsList.m in Sources */,
@@ -429,10 +444,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = stackOverFlow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.stackOverFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "stackOverFlow/stackOverFlow-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -440,10 +459,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = stackOverFlow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.stackOverFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "stackOverFlow/stackOverFlow-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

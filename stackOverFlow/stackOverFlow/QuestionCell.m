@@ -26,11 +26,6 @@
     _answersHolder.backgroundColor = [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-}
-
 -(void)configureCellWithQuestion:(Question*)question
 {
     self.questionViewModel = [[QuestionViewModel alloc]initWithQuestion:question];
@@ -44,8 +39,6 @@
         [self.tagsStack addArrangedSubview:label];
     }
     self.answersHolder.backgroundColor = _questionViewModel.backgroundColorForAnswerHolder;
-    self.answersHolder.layer.cornerRadius = _answersHolder.frame.size.width/2;
-    self.answersHolder.layer.masksToBounds = true;
 }
 
 -(UITextField *)createTagWithTagNamed:(NSString *)tagName
