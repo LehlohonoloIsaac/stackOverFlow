@@ -14,7 +14,6 @@
 
 @property (nonatomic,strong) QuestionsListViewModel *questionsViewModelToTest;
 @property (nonatomic,strong) QuestionsList *mockQuestionsList;
-@property (nonatomic,strong) NSIndexPath *indexPath;
 
 @end
 
@@ -25,7 +24,6 @@
     [super setUp];
     _mockQuestionsList = [[QuestionsList alloc]initWithMockQuestions];
     _questionsViewModelToTest = [[QuestionsListViewModel alloc]initWithQuestionsList:_mockQuestionsList];
-    _indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
 }
 
 -(void)testIfTheCorrectNumberOfQuestionsIsReturned
