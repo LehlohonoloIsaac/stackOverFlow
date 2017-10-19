@@ -70,7 +70,7 @@
     [request setURL:[NSURL URLWithString:@"https://api.stackexchange.com/2.2/questions?pagesize=100&order=asc&sort=creation&tagged=ios&site=stackoverflow"]];
     NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response, NSError *error)
     {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self questionsFromJSON:data error:error];
             [self.delegate didFetchQuestionsFromStackOverFlow:questions];
         });
