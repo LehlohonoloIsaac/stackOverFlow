@@ -28,8 +28,18 @@
     QuestionsList *questionsList = [[QuestionsList alloc] initWithQuestions];
     questionsList.delegate = self;
     self.questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
+    [self configureTableView];
+    [self configureSearchController];
+}
+
+-(void)configureTableView
+{
     UINib *questionCell = [UINib nibWithNibName:@"QuestionCell" bundle:nil];
     [_tableView registerNib:questionCell forCellReuseIdentifier:@"QuestionCell"];
+}
+
+-(void)configureSearchController
+{
     self.searchResults = [[NSMutableArray alloc]init];
     self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
     self.searchController.definesPresentationContext = true;
@@ -76,7 +86,7 @@
     {
         if (!self.searchController.isActive)
         {
-            question = [self.questionsViewModel questionAtIndexPath:indexPath];
+            question = [self.questionsViewModel questionAtPosition: indexPath.row];
         }else
         {
             question = nil;

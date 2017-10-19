@@ -36,8 +36,8 @@
     return self.questions.count;
 }
 
--(Question *)questionAtIndexPath:(NSIndexPath *)indexPath {
-    return _questions[indexPath.row];
+-(Question *)questionAtPosition:(NSInteger)position {
+    return _questions[position];
 }
 
 

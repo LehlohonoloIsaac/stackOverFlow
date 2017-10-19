@@ -44,7 +44,6 @@
 		ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		ED9A79291F45CB0600ACB76C /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
-		EDC566CB1F98A2CB002197EC /* stackOverFlow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "stackOverFlow-Bridging-Header.h"; sourceTree = "<group>"; };
 		EDC566CE1F98A2F0002197EC /* RoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
 		EDC566CF1F98A2F0002197EC /* RoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
 		EDC8FCA41F458BD900266A50 /* stackOverFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stackOverFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +134,6 @@
 			children = (
 				ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */,
 				ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */,
-				EDC566CB1F98A2CB002197EC /* stackOverFlow-Bridging-Header.h */,
 				EDC566CE1F98A2F0002197EC /* RoundedView.h */,
 				EDC566CF1F98A2F0002197EC /* RoundedView.m */,
 			);
