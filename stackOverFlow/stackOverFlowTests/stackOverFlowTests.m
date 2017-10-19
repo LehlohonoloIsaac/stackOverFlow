@@ -28,60 +28,11 @@
     _indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
 }
 
--(void)testIfTheCorrectQuestionIsDisplayed
-{
-    NSString *expectedResult = @"What is objective-C";
-    NSString *question = [self.questionsViewModelToTest displayQuestionAtIndexPath:_indexPath];
-    XCTAssertTrue([question isEqualToString:expectedResult]);
-}
-
 -(void)testIfTheCorrectNumberOfQuestionsIsReturned
 {
     NSUInteger expectedResult = 10;
     NSUInteger numberOfQuestions = [self.questionsViewModelToTest numberOfQuestions];
     XCTAssertEqual(expectedResult, numberOfQuestions);
-}
-
--(void)testIfTheCorrectTimeIsReturned
-{
-    NSString *expectedResults = @"0 hours ago";
-    NSString *timePosted = [self.questionsViewModelToTest timeAtIndexPath:_indexPath];
-    XCTAssertEqualObjects(expectedResults, timePosted);
-}
-
--(void)testIfTheCorrectTagsAreReturned
-{
-    NSArray *expectedTags = @[@"ios",@"objective-c"];
-    NSArray *tags = [self.questionsViewModelToTest tagsAtIndexPath:_indexPath];
-    XCTAssertEqualObjects(expectedTags, tags);
-}
-
--(void)testIfCorrectAnswerLabelIsSet
-{
-    NSString *expectedResult = @"Answers";
-    NSString *answerLabel = [self.questionsViewModelToTest setAnswerLabelAtIndexPath:_indexPath];
-    XCTAssertTrue([answerLabel isEqualToString:expectedResult]);
-}
-
--(void)testIfCorrectNumberOfAnswersAreReturned
-{
-    NSUInteger expectedResult = 0;
-    NSUInteger numberofAnswers = [self.questionsViewModelToTest numberOfAnswersAtIndexPath:_indexPath];
-    XCTAssertEqual(expectedResult, numberofAnswers);
-}
-
--(void)testIfCorrectColorForAnswerHolderIsReturned
-{
-    UIColor *expectedColor = [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
-    UIColor *color = [self.questionsViewModelToTest setBackgroundColorForAnswerHolderAtIndexPath:_indexPath];
-    XCTAssertEqualObjects(expectedColor, color);
-}
-
--(void)testIfisAnswerCorrectMethodWorksCorrectly
-{
-    Boolean expectedResult = false;
-    Boolean result = [self.questionsViewModelToTest isAnswerAccepted:_indexPath];
-    XCTAssertTrue(expectedResult == result);
 }
 
 - (void)testPerformanceExample
