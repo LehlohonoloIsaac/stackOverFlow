@@ -26,11 +26,6 @@
     _answersHolder.backgroundColor = [UIColor.lightGrayColor colorWithAlphaComponent:0.4];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-}
-
 -(void)configureCellWithQuestion:(Question*)question
 {
     self.questionViewModel = [[QuestionViewModel alloc]initWithQuestion:question];
