@@ -7,13 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "QuestionsList.h"
+#import "QuestionsRepositoryImplementation.h"
 #import "QuestionsListViewModel.h"
 
 @interface stackOverFlowTests : XCTestCase
 
 @property (nonatomic,strong) QuestionsListViewModel *questionsViewModelToTest;
-@property (nonatomic,strong) QuestionsList *mockQuestionsList;
+@property (nonatomic,strong) QuestionsRepositoryImplementation *mockQuestionsRepositoryImplementation;
 
 @end
 
@@ -22,8 +22,8 @@
 - (void)setUp
 {
     [super setUp];
-    _mockQuestionsList = [[QuestionsList alloc]initWithMockQuestions];
-    _questionsViewModelToTest = [[QuestionsListViewModel alloc]initWithQuestionsList:_mockQuestionsList];
+    _mockQuestionsRepositoryImplementation = [[QuestionsRepositoryImplementation alloc]initWithMockQuestions];
+    _questionsViewModelToTest = [[QuestionsListViewModel alloc]initWithQuestionsList:_mockQuestionsRepositoryImplementation];
 }
 
 -(void)testIfTheCorrectNumberOfQuestionsIsReturned

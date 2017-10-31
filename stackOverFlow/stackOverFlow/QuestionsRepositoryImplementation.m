@@ -6,10 +6,10 @@
 //  Copyright © 2017 DVT. All rights reserved.
 //
 
-#import "QuestionsList.h"
+#import "QuestionsRepositoryImplementation.h"
 #import "Question.h"
 
-@implementation QuestionsList
+@implementation QuestionsRepositoryImplementation
 {
     NSMutableArray *questions;
 }

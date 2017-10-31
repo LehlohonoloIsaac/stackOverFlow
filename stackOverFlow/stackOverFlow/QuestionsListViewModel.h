@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "QuestionsList.h"
+#import "QuestionsRepositoryImplementation.h"
 #import "Question.h"
 
 @interface QuestionsListViewModel : NSObject
 
--(instancetype)initWithQuestionsList:(QuestionsList *)questionsList;
+-(instancetype)initWithQuestionsList:(QuestionsRepositoryImplementation *)questionsRepositoryImplementation;
 
 -(NSUInteger)numberOfQuestions;
 -(Question *)questionAtIndexPath:(NSIndexPath *)indexPath;

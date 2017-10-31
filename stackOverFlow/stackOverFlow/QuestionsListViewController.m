@@ -8,8 +8,9 @@
 
 #import "QuestionsListViewController.h"
 #import "QuestionCell.h"
+#import "QuestionsRepositoryImplementation.h"
 
-@interface QuestionsListViewController ()<UITableViewDelegate,UITableViewDataSource,QuestionsListDelegate,UISearchResultsUpdating,UISearchBarDelegate>
+@interface QuestionsListViewController ()<UITableViewDelegate,UITableViewDataSource,QuestionsRepositoryDelegate,UISearchResultsUpdating,UISearchBarDelegate>
 @property (nonatomic,retain) NSMutableArray *questions;
 @property (nonatomic,strong) QuestionsListViewModel *questionsViewModel;
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
@@ -25,9 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    QuestionsList *questionsList = [[QuestionsList alloc] initWithQuestions];
-    questionsList.delegate = self;
-    self.questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsList];
+    QuestionsRepositoryImplementation *questionsRepositoryImplementation = [[QuestionsRepositoryImplementation alloc] initWithQuestions];
+    questionsRepositoryImplementation.delegate = self;
+    self.questionsViewModel = [[QuestionsListViewModel alloc] initWithQuestionsList:questionsRepositoryImplementation];
     UINib *questionCell = [UINib nibWithNibName:@"QuestionCell" bundle:nil];
     [_tableView registerNib:questionCell forCellReuseIdentifier:@"QuestionCell"];
     self.searchResults = [[NSMutableArray alloc]init];

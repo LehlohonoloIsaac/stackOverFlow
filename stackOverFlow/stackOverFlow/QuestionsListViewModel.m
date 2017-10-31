@@ -12,14 +12,14 @@
 
 @interface QuestionsListViewModel()
 
-@property (nonatomic,strong,readonly) QuestionsList *questionsList;
+@property (nonatomic,strong,readonly) QuestionsRepositoryImplementation *questionsRepositoryImplementation;
 @property (nonatomic, strong) NSMutableArray *questions;
 
 @end
 
 @implementation QuestionsListViewModel
 
--(instancetype)initWithQuestionsList:(QuestionsList *)questionsList{
+-(instancetype)initWithQuestionsList:(QuestionsRepositoryImplementation *)questionsRepositoryImplementation{
     
     self = [super init];
     
@@ -27,8 +27,8 @@
         return nil;
     }
     
-    _questionsList = questionsList;
-    _questions = [questionsList fetchQuestions];
+    _questionsRepositoryImplementation = questionsRepositoryImplementation;
+    _questions = [questionsRepositoryImplementation fetchQuestions];
     return self;
 }
 

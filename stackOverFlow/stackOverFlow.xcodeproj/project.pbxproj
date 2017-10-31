@@ -10,7 +10,7 @@
 		ED4534B81F470624008E5C14 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534B71F470624008E5C14 /* Question.m */; };
 		ED4534BE1F4713F8008E5C14 /* QuestionsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534BD1F4713F8008E5C14 /* QuestionsListViewModel.m */; };
 		ED4534BF1F4713F8008E5C14 /* QuestionsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534BD1F4713F8008E5C14 /* QuestionsListViewModel.m */; };
-		ED4534C21F471869008E5C14 /* QuestionsList.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534C11F471869008E5C14 /* QuestionsList.m */; };
+		ED4534C21F471869008E5C14 /* QuestionsRepositoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4534C11F471869008E5C14 /* QuestionsRepositoryImplementation.m */; };
 		ED8E0D1D1F45D6A1006BA37C /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */; };
 		ED9A792A1F45CB0600ACB76C /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9A79291F45CB0600ACB76C /* QuestionCell.xib */; };
 		EDC566D01F98A2F0002197EC /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC566CF1F98A2F0002197EC /* RoundedView.m */; };
@@ -39,8 +39,8 @@
 		ED4534B71F470624008E5C14 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		ED4534BC1F4713F8008E5C14 /* QuestionsListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsListViewModel.h; sourceTree = "<group>"; };
 		ED4534BD1F4713F8008E5C14 /* QuestionsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsListViewModel.m; sourceTree = "<group>"; };
-		ED4534C01F471869008E5C14 /* QuestionsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsList.h; sourceTree = "<group>"; };
-		ED4534C11F471869008E5C14 /* QuestionsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsList.m; sourceTree = "<group>"; };
+		ED4534C01F471869008E5C14 /* QuestionsRepositoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsRepositoryImplementation.h; sourceTree = "<group>"; };
+		ED4534C11F471869008E5C14 /* QuestionsRepositoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsRepositoryImplementation.m; sourceTree = "<group>"; };
 		ED8A72A11FA86F8D0063D01F /* QuestionsRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionsRepository.h; sourceTree = "<group>"; };
 		ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
@@ -116,8 +116,8 @@
 		ED4534C61F472282008E5C14 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				ED4534C01F471869008E5C14 /* QuestionsList.h */,
-				ED4534C11F471869008E5C14 /* QuestionsList.m */,
+				ED4534C01F471869008E5C14 /* QuestionsRepositoryImplementation.h */,
+				ED4534C11F471869008E5C14 /* QuestionsRepositoryImplementation.m */,
 				ED8A72A11FA86F8D0063D01F /* QuestionsRepository.h */,
 			);
 			name = Repository;
@@ -308,7 +308,7 @@
 				EDC566D01F98A2F0002197EC /* RoundedView.m in Sources */,
 				ED4534B81F470624008E5C14 /* Question.m in Sources */,
 				EDC8FCAC1F458BDA00266A50 /* AppDelegate.m in Sources */,
-				ED4534C21F471869008E5C14 /* QuestionsList.m in Sources */,
+				ED4534C21F471869008E5C14 /* QuestionsRepositoryImplementation.m in Sources */,
 				EDC8FCA91F458BDA00266A50 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
