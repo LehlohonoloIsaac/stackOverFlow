@@ -36,6 +36,10 @@
     return self;
 }
 
+-(NSMutableArray* )fetchQuestions{
+    return questions;
+}
+
 -(void)fetchMockQuestions
 {
     questions = [[NSMutableArray alloc]init];
@@ -56,11 +60,6 @@
     {
         [questions addObject:quest];
     }
-}
-
--(NSMutableArray *)fetchQuestions
-{
-    return questions;
 }
 
 -(void)fetchQuestionsFromStackOverFlowApi

@@ -41,6 +41,7 @@
 		ED4534BD1F4713F8008E5C14 /* QuestionsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsListViewModel.m; sourceTree = "<group>"; };
 		ED4534C01F471869008E5C14 /* QuestionsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsList.h; sourceTree = "<group>"; };
 		ED4534C11F471869008E5C14 /* QuestionsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsList.m; sourceTree = "<group>"; };
+		ED8A72A11FA86F8D0063D01F /* QuestionsRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionsRepository.h; sourceTree = "<group>"; };
 		ED8E0D1B1F45D6A1006BA37C /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		ED8E0D1C1F45D6A1006BA37C /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		ED9A79291F45CB0600ACB76C /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 			children = (
 				ED4534C01F471869008E5C14 /* QuestionsList.h */,
 				ED4534C11F471869008E5C14 /* QuestionsList.m */,
+				ED8A72A11FA86F8D0063D01F /* QuestionsRepository.h */,
 			);
 			name = Repository;
 			sourceTree = "<group>";

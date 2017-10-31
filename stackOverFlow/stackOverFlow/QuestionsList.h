@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "QuestionsRepository.h"
 
 @protocol QuestionsListDelegate <NSObject>
 @required
@@ -15,11 +16,10 @@
 
 typedef id<QuestionsListDelegate> QuestionsListDelegate;
 
-@interface QuestionsList : NSObject
+@interface QuestionsList : NSObject<QuestionsRepository>
 -(instancetype)initWithMockQuestions;
 -(instancetype)initWithQuestions;
 @property (nonatomic,weak) QuestionsListDelegate delegate;
 -(void)fetchMockQuestions;
 -(void)fetchQuestionsFromStackOverFlowApi;
--(NSMutableArray*)fetchQuestions;
 @end
